@@ -1,17 +1,35 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import GoogleMapReact from "google-map-react";
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+import styled from 'styled-components';
+import FilterIcon from './map/filter';
+import ListMapSwitch from './map/listmapswitchbtn';
+
+
+const Wrapper = styled.div`
+    height: ${props => props.height};
+    width: ${props => props.width};
+`;
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-const REACT_APP_MAP_KEY = 'AIzaSyDiDLXMnE76vMVZ-xfbMFaWriBS_gs4lQY';
-
-const Wrapper = styled.div`
-  height: ${props => props.height};
-  width: ${props => props.width};
-
-  background-color: white;
-`;
+function mapOptions(maps) {
+    // next props are exposed at maps
+    // "Animation", "ControlPosition", "MapTypeControlStyle", "MapTypeId",
+    // "NavigationControlStyle", "ScaleControlStyle", "StrokePosition", "SymbolPath", "ZoomControlStyle",
+    // "DirectionsStatus", "DirectionsTravelMode", "DirectionsUnitSystem", "DistanceMatrixStatus",
+    // "DistanceMatrixElementStatus", "ElevationStatus", "GeocoderLocationType", "GeocoderStatus", "KmlLayerStatus",
+    // "MaxZoomStatus", "StreetViewStatus", "TransitMode", "TransitRoutePreference", "TravelMode", "UnitSystem"
+    return {
+      zoomControlOptions: {
+        position: maps.ControlPosition.LEFT_BOTTOM
+    },
+      mapTypeControlOptions: {
+        position: maps.ControlPosition.TOP_CENTER,
+      },
+      mapTypeControl: false,
+      fullscreenControl: false,
+    };
+  }
 
 class GoogleMap extends Component {
   static defaultProps = {
@@ -22,20 +40,23 @@ class GoogleMap extends Component {
     zoom: 11
   };
 
+  
+
   render() {
     return (
-      <Wrapper {...this.props}>
-        <GoogleMapReact
-          abootstrapURLKeys={{
-            key: REACT_APP_MAP_KEY,
-            libraries: ['places', 'geometry'],
-          }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          <AnyReactComponent lat={59.955413} lng={30.377844} text="My Marker" />
-        </GoogleMapReact>
-      </Wrapper>
+        <Wrapper {...this.props}>
+          <GoogleMapReact
+            bootstrapURLKeys={{ key: 'AIzaSyDiDLXMnE76vMVZ-xfbMFaWriBS_gs4lQY' }}
+            defaultCenter={this.props.center}
+            defaultZoom={this.props.zoom}
+            yesIWantToUseGoogleMapApiInternals
+            options={mapOptions}
+            >
+          </GoogleMapReact>
+          <FilterIcon/>
+          <ListMapSwitch height={this.props.height}/>
+        </Wrapper>
+      
     );
   }
 }
