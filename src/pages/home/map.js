@@ -10,8 +10,6 @@ const Wrapper = styled.div`
     width: ${props => props.width};
 `;
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 function mapOptions(maps) {
     // next props are exposed at maps
     // "Animation", "ControlPosition", "MapTypeControlStyle", "MapTypeId",
