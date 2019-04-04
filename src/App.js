@@ -7,6 +7,7 @@ import { faFilter, faBars, faMap } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components';
 
 import HomePage from './pages/Home.js'
+import ListView from './pages/home/list';
 
 library.add(faFilter, faBars, faMap);
 
@@ -22,7 +23,7 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/list" component={HomePage} />
+              <Route exact path="/list" component={ListView} />
             </Switch>
           </Router>
         </Wrapper>

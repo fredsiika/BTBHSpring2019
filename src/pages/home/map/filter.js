@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   position: absolute;
 
   top: 30px;
-  right: 30px;
+  right: ${props => props.isFullscreen ? '30px' : 'calc(50vw + 30px)'};
 
   .icon {
     margin-top: 5px;
@@ -48,12 +48,16 @@ const Wrapper = styled.div`
   .rounded:focus{
     outline: none;
   }
+
+  .rounded:hover{
+    cursor: pointer;
+  }
 `;
 
 class FilterIcon extends Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper {...this.props}>
         <MDBBtn color="danger" className="rounded">
           <FontAwesomeIcon icon="filter" className="icon" />
         </MDBBtn>

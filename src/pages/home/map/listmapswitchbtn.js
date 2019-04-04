@@ -7,7 +7,8 @@ const Wrapper = styled.div`
   position: absolute;
 
   top: calc( (${props => props.height}) - 100px);
-  right: 30px;
+  right: ${props => props.isFullscreen ? '30px' : 'calc(50vw + 30px)'};
+;
 
   .icon {
     margin-top: 2px;
@@ -47,6 +48,10 @@ const Wrapper = styled.div`
     width: 52px;
     box-shadow: 1px 4px 4px 1px #333333; 
   }
+
+  .rounded:hover{
+    cursor: pointer;
+  }
 `;
 
 class ListMapSwitch extends Component {
@@ -60,6 +65,7 @@ class ListMapSwitch extends Component {
         mapActive: !this.state.mapActive
     });
     console.log("mapActive: ", this.state.mapActive);
+    this.props.handleToggle();
   }
 
   render() {

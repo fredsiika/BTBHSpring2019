@@ -51,8 +51,8 @@ class GoogleMap extends Component {
             options={mapOptions}
             >
           </GoogleMapReact>
-          <FilterIcon/>
-          <ListMapSwitch height={this.props.height}/>
+          <FilterIcon isFullscreen={this.props.isFullscreen}/>
+          <ListMapSwitch height={this.props.height} handleToggle={this.props.handleToggle} isFullscreen={this.props.isFullscreen}/>
         </Wrapper>
       
     );
