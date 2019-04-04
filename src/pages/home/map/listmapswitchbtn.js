@@ -7,7 +7,9 @@ const Wrapper = styled.div`
   position: absolute;
 
   top: calc( (${props => props.height}) - 100px);
-  right: ${props => props.isFullscreen ? '30px' : 'calc(50vw + 30px)'};
+  right: ${props => props.isFullscreen ? '30px' : 'calc(66vw + 30px)'};
+
+  transition: right 1s;
 ;
 
   .icon {

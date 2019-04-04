@@ -8,6 +8,7 @@ import ListMapSwitch from './map/listmapswitchbtn';
 const Wrapper = styled.div`
     height: ${props => props.height};
     width: ${props => props.width};
+    transition: width 1s;
 `;
 
 function mapOptions(maps) {
