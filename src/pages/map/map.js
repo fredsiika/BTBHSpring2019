@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
-import FilterIcon from './map/filter';
-import ListMapSwitch from './map/listmapswitchbtn';
+// import FilterIcon from './map/filter';
+// import ListMapSwitch from './map/listmapswitchbtn';
 
 
 const Wrapper = styled.div`
-    height: ${props => props.height};
+    height: calc((${props => props.height}));
     width: ${props => props.width};
     transition: width 1s;
 `;
@@ -33,8 +33,8 @@ function mapOptions(maps) {
 class GoogleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 37.548616,
+      lng: -122.059097
     },
     zoom: 11
   };
@@ -52,8 +52,11 @@ class GoogleMap extends Component {
             options={mapOptions}
             >
           </GoogleMapReact>
-          <FilterIcon isFullscreen={this.props.isFullscreen}/>
-          <ListMapSwitch height={this.props.height} handleToggle={this.props.handleToggle} isFullscreen={this.props.isFullscreen}/>
+          {
+            //Will likely not be using this method in mobile view
+            //<FilterIcon isFullscreen={this.props.isFullscreen}/>
+            //<ListMapSwitch height={this.props.height} handleToggle={this.props.handleToggle} isFullscreen={this.props.isFullscreen}/>
+          }
         </Wrapper>
       
     );

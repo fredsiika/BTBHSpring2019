@@ -1,42 +1,113 @@
 import React, { Component } from "react";
+import {
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBCarouselItem,
+} from "mdbreact";
 import styled from "styled-components";
-import GoogleMap from "./home/map";
-import ListView from "./home/list";
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import Video from "../shared/video";
+import ImageCard from "../shared/image-card";
 
 const Wrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
-  float: left;
+  margin-top: 15px;
+
+  .test {
+    padding-top: 15px;
+    /* margin-left: 0; */
+    /* padding-right: 0; */
+    /* padding-left: 0; */
+  }
 `;
 
 class HomePage extends Component {
-  state = {
-    fullScreen: true
-  };
-
-  handleFullscreenToggle = () => {
-    this.setState({
-      fullScreen: !this.state.fullScreen
-    });
-    console.log("fullscreen: ", this.state.fullScreen);
-  };
-
   render() {
     return (
       <Wrapper>
         <MDBContainer>
           <MDBRow>
-            <MDBCol sm="6">
-              <GoogleMap
-                height="100vh"
-                width={this.state.fullScreen ? "100vw" : "33vw"}
-                handleToggle={this.handleFullscreenToggle}
-                isFullscreen={this.state.fullScreen}
-              />
+            <MDBCol>
+              <Video />
             </MDBCol>
-            <MDBCol sm="6">
-              <ListView />
+          </MDBRow>
+          <MDBRow>
+            <MDBCol className="test" size="12">
+              <ImageCard />
+            </MDBCol>
+          </MDBRow>
+
+          <MDBRow>
+          <MDBCol size='12'>
+            <MDBCarousel
+              activeItem={1}
+              length={4}
+              showControls={true}
+              showIndicators={false}
+              className="z-depth-1"
+            >
+              <MDBCarouselInner>
+                <MDBCarouselItem itemId="1">
+                  <MDBRow>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                  </MDBRow>
+                </MDBCarouselItem>
+                <MDBCarouselItem itemId="2">
+                  <MDBRow>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                  </MDBRow>
+                </MDBCarouselItem>
+                <MDBCarouselItem itemId="3">
+                  <MDBRow>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                  </MDBRow>
+                </MDBCarouselItem>
+                <MDBCarouselItem itemId="4">
+                  <MDBRow>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                    <MDBCol className="test" size="4">
+                      <ImageCard />
+                    </MDBCol>
+                  </MDBRow>
+                </MDBCarouselItem>
+              </MDBCarouselInner>
+            </MDBCarousel>
+            </MDBCol>
+            <MDBCol className="test" size="6">
+              <ImageCard />
+            </MDBCol>
+            <MDBCol className="test" size="6">
+              <ImageCard />
             </MDBCol>
           </MDBRow>
         </MDBContainer>
