@@ -58,17 +58,17 @@ class ImageCard extends Component{
         return (
             <Wrapper>
             <img
-                src="https://resizer.otstatic.com/v2/photos/huge/24165521.jpg"
+                src={this.props.url}
                 className="main-image rounded float-left"
                 alt="aligment"
               />
               <div className="thumbs-container red">
-                <span className="thumbs-count">831</span>
+                <span className="thumbs-count">{this.props.thumbs}</span>
                 <span className="thumbs-up">
                   <MDBIcon icon="thumbs-up" />
                 </span>
               </div>
-              <h3 className="restaurant-title">Joe's Bar & Grill</h3>
+              <h3 className="restaurant-title">{this.props.name}</h3>
             </Wrapper>
         );
     }

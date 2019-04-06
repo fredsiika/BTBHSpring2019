@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  MDBContainer,
   MDBNavbar,
   MDBNavbarNav,
   MDBNavItem,
@@ -52,7 +53,10 @@ class Navbar extends Component {
   render() {
     return (
       <Wrapper>
-      <MDBNavbar color="red" dark expand>
+
+      <MDBNavbar fixed="top" color="red" dark expand>
+      <MDBContainer>
+
         <MDBNavbarToggler  onClick={this.toggleCollapse} />
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav center="true">
@@ -82,7 +86,10 @@ class Navbar extends Component {
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
+        </MDBContainer>
       </MDBNavbar>
+
+      
       </Wrapper>
     );
   }
