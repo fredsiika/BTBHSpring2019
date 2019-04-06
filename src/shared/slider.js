@@ -3,6 +3,8 @@ import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+        height: 10px;
+
     .range{
         padding-right: 25px;
         padding-left: 25px;
@@ -14,6 +16,10 @@ const Wrapper = styled.div`
 
     .bold{
         font-weight: 600;
+    }
+
+    .text-red{
+        color: red;
     }
 `;
 
@@ -45,14 +51,14 @@ class SliderPage extends Component {
                 </MDBCol>
             </MDBRow>
             <MDBRow>
-                <MDBCol onClick={() => {this.setNewValue('0')}} className={this.state.value === '0' ? "bold center" : "center"} size='4'>
-                 $
+                <MDBCol onClick={() => {this.setNewValue('0')}} className={this.state.value === '0' ? "bold center text-red" : "center"} size='4'>
+                 {this.props.option0}
                 </MDBCol>
-                <MDBCol onClick={() => {this.setNewValue('1')}} className={this.state.value === '1' ? "bold center" : "center"} size='4'>
-                 $$
+                <MDBCol onClick={() => {this.setNewValue('1')}} className={this.state.value === '1' ? "bold center text-red" : "center"} size='4'>
+                {this.props.option1}
                 </MDBCol>
-                <MDBCol onClick={() => {this.setNewValue('2')}} className={this.state.value === '2' ? "bold center" : "center"} size='4'>
-                 $$$
+                <MDBCol onClick={() => {this.setNewValue('2')}} className={this.state.value === '2' ? "bold center text-red" : "center"} size='4'>
+                {this.props.option2}
                 </MDBCol>
             </MDBRow>
         </MDBContainer>
