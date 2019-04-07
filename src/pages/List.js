@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBIcon } from "mdbreact";
 import ImageCard from "../shared/image-card";
 
 import styled from "styled-components";
+import Amenity from "../shared/amenity";
 
 const Wrapper = styled.div`
   .test {
@@ -148,57 +149,47 @@ class ListView extends Component {
     return (
       <Wrapper>
         <MDBContainer>
-        {
-          this.props.restaurants.map((restaurant, index) => {
-            console.log(restaurant);
-            return(
+          {this.props.restaurants.map((restaurant, index) => {
+            return (
               <div key={index}>
-                  <MDBRow className="card-container" >
+                <MDBRow className="card-container">
                   <MDBCol className="test" sm="3">
                     <ImageCard
                       url={restaurant.imageUrl}
-                      thumbs={restaurant.thumbsUpId.food + restaurant.thumbsUpId.service + restaurant.thumbsUpId.atmosphere}
+                      thumbs={
+                        restaurant.thumbsUpId.food +
+                        restaurant.thumbsUpId.service +
+                        restaurant.thumbsUpId.atmosphere
+                      }
                       name={restaurant.name}
                     />
                   </MDBCol>
                   <MDBCol className="test" sm="9">
                     <MDBRow>
                       <MDBCol className="test category-container" size="12">
-                        {
-                          restaurant.categories.map((amenity, index) => {
-                            return (
-                              <span key={index} className="category">{amenity}</span>
-                            )
-                          })
-                        }
+                        {restaurant.categories.map((amenity, index) => {
+                          return (
+                            <span key={index} className="category">
+                              {amenity}
+                            </span>
+                          );
+                        })}
                       </MDBCol>
                     </MDBRow>
-                    <MDBRow className="amenity-container">
-                      <MDBCol className="test" size="12">
-                        <h5 className="amenity green">
-                          <MDBIcon icon="leaf" className="icon fa-xs" />
-                        </h5>
-                        <h5 className="amenity green">
-                          <MDBIcon icon="leaf" className="icon fa-xs">
-                            +
-                          </MDBIcon>
-                        </h5>
-                        <h5 className="amenity blue">
-                          <MDBIcon icon="wifi" className="icon fa-xs" />
-                        </h5>
-                        <h5 className="amenity brown">
-                          <MDBIcon icon="bacon" className="icon fa-sm" />
-                        </h5>
+                    <MDBRow className="test amenity-container">
+                      <MDBCol size="12">
+                        {restaurant.amenities.map((amenity, index) => {
+                          return <Amenity key={index} name={amenity} />;
+                        })}
                         <span className="miles">0.5 Miles</span>
                       </MDBCol>
                     </MDBRow>
                   </MDBCol>
                 </MDBRow>
                 <hr className="rule" />
-                </div>
+              </div>
             );
-          })
-        }
+          })}
         </MDBContainer>
       </Wrapper>
     );

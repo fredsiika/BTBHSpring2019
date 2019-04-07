@@ -28,15 +28,10 @@ class App extends Component {
   componentDidMount(){
     this.props.allStoriesQuery.refetch()
     .then((ret) => {
-      // console.log(ret.data.allRestaurants);
       this.setState({
         allRestaurants: ret.data.allRestaurants
       })
     });
-  }
-
-  componentDidUpdate() {
-    // console.log("App: ",this.state.categoryFilters);
   }
 
   render() {
