@@ -56,10 +56,14 @@ class HomePage extends Component {
             }
             {this.props.restaurants.map((restaurant, index) => {
               return (
-                <MDBCol className="test" sm="12" md="6" lg="4">
+                <MDBCol key={index} className="test" sm="12" md="6" lg="4">
                   <ImageCard
                     url={restaurant.imageUrl}
-                    thumbs={restaurant.thumbsUp || 0}
+                    thumbs={
+                      restaurant.thumbsUpId.food +
+                      restaurant.thumbsUpId.service +
+                      restaurant.thumbsUpId.atmosphere || 0
+                    }
                     name={restaurant.name}
                   />
                 </MDBCol>
