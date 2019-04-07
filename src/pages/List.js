@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBIcon } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol} from "mdbreact";
 import ImageCard from "../shared/image-card";
+import { withRouter } from 'react-router-dom'
 
 import styled from "styled-components";
 import Amenity from "../shared/amenity";
@@ -109,26 +110,6 @@ const Wrapper = styled.div`
     margin-top: 15px;
   }
 
-  .amenity {
-    height: 30px !important;
-    width: 30px !important;
-    margin-right: 5px;
-    padding: 4px;
-    border-radius: 50%;
-
-    color: white;
-
-    font-weight: bold;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .icon {
-    position: relative;
-    top: -3px;
-    left: -1px;
-  }
-
   .miles {
     float: right;
     display: block;
@@ -196,4 +177,4 @@ class ListView extends Component {
   }
 }
 
-export default ListView;
+export default withRouter(ListView);

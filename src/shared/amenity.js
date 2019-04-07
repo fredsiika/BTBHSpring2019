@@ -15,7 +15,8 @@ const Wrapper = styled.div`
 
     font-weight: bold;
     text-align: center;
-    display: inline-block;
+    display: block;
+    float: left;
   }
 
   .icon {
@@ -61,6 +62,11 @@ class Amenity extends Component {
         icon = "wifi";
         color = "blue";
         break;
+      default :
+        icon =  "";
+        color = "";
+        break;
+
     }
     this.setState({
         icon: icon,
@@ -71,13 +77,13 @@ class Amenity extends Component {
 
   render() {
     return (
-      // <Wrapper>
+      <Wrapper>
         <h5 className={"amenity " + this.state.color}>
           <MDBIcon icon={this.state.icon} className="icon fa-xs">
             {this.state.plus === true ? "+" : ""}
           </MDBIcon>
         </h5>
-      // </Wrapper>
+      </Wrapper>
     );
   }
 }
