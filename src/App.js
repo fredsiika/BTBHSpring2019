@@ -12,38 +12,11 @@ import FilterPage from './pages/Filter';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
-const seedData = [
-  {
-    url: "https://resizer.otstatic.com/v2/photos/huge/24165521.jpg",
-    thumbs: 831,
-    name: "Joe's Bar & Grill"
-  },
-  {
-    url: "https://assets3.thrillist.com/v1/image/2785413/size/gn-gift_guide_variable_c.jpg",
-    thumbs: 739,
-    name: "El Limoncito"
-  },
-  {
-    url: "https://media.timeout.com/images/103820800/630/472/image.jpg",
-    thumbs: 612,
-    name: "Best Halal"
-  },
-  {
-    url: "https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/roast-turkey-pho-ck.jpg?itok=Vf6k6W0d",
-    thumbs: 417,
-    name: "Pho 64"
-  },
-  {
-    url: "https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg",
-    thumbs: 368,
-    name: "China Express"
-  },
-]
-
 class App extends Component {
 
   state = {
-    categoryFilters: []
+    categoryFilters: [],
+    allRestaurants: []
   }
 
   handleCategories = (newArr) => {    
@@ -55,7 +28,10 @@ class App extends Component {
   componentDidMount(){
     this.props.allStoriesQuery.refetch()
     .then((ret) => {
-      console.log(ret);
+      // console.log(ret.data.allRestaurants);
+      this.setState({
+        allRestaurants: ret.data.allRestaurants
+      })
     });
   }
 
@@ -69,8 +45,8 @@ class App extends Component {
             <Router>
               <Navbar/>
               <Switch>
-                <Route exact path="/" component={() => <HomePage seedData={seedData}/>}/>
-                <Route exact path="/list" component={ListPage}/>
+                <Route exact path="/" component={() => <HomePage restaurants={this.state.allRestaurants}/>}/>
+                <Route exact path="/list" component={() => <ListPage restaurants={this.state.allRestaurants}/>}/>
                 <Route exact path="/map" component={MapPage} />
                 <Route exact path="/filter" component={() => <FilterPage handleCategories={this.handleCategories} categoryFilters={this.categoryFilters}/>}/>
               </Switch>
@@ -82,10 +58,16 @@ class App extends Component {
 
 const GET_STORIES = gql`
   query {
-     allStories{
-      title
-      subtitle
-      id
+     allRestaurants{
+      name
+      imageUrl
+      amenities
+      categories
+      thumbsUpId{
+        food
+        service
+        atmosphere
+      }
      } 
   }
 `;

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBIcon } from "mdbreact";
-import ImageCard from '../shared/image-card';
+import ImageCard from "../shared/image-card";
 
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-
   .test {
     /* border: 1px solid black; */
   }
@@ -16,18 +15,18 @@ const Wrapper = styled.div`
     background-color: white;
     box-shadow: 0px 0px 20px 5px lightgrey;
     margin-top: 0;
-    transition: margin-top .2s, padding-bottom .2s, box-shadow .2s;
-    -webkit-transition: margin-top .2s, padding-bottom .2s, box-shadow .2s; /* Safari */
+    transition: margin-top 0.2s, padding-bottom 0.2s, box-shadow 0.2s;
+    -webkit-transition: margin-top 0.2s, padding-bottom 0.2s, box-shadow 0.2s; /* Safari */
     z-index: 0;
   }
 
-  .card-container:hover{
+  .card-container:hover {
     box-shadow: 0px 0px 40px 5px #aaaaaa;
     /* padding-top: 30px; */
     padding-bottom: 25px;
     margin-top: -5px;
     z-index: 9999;
-   }
+  }
 
   .restaurant-title {
     position: absolute;
@@ -50,7 +49,7 @@ const Wrapper = styled.div`
     cursor: pointer;
   }
 
-  .thumbs-container{
+  .thumbs-container {
     position: absolute;
     right: 20px;
     top: 5px;
@@ -98,9 +97,9 @@ const Wrapper = styled.div`
 
     margin: 2px;
   }
-  
-  .category-container{
-      padding-top: 15px;
+
+  .category-container {
+    padding-top: 15px;
   }
 
   .amenity-container {
@@ -139,8 +138,8 @@ const Wrapper = styled.div`
     margin: 0;
   }
 
-  .pushdown{
-      padding-top: 50px;
+  .pushdown {
+    padding-top: 50px;
   }
 `;
 
@@ -149,496 +148,57 @@ class ListView extends Component {
     return (
       <Wrapper>
         <MDBContainer>
-        <MDBRow className="card-container">
-        <MDBCol className="test" sm="3">
-          <ImageCard 
-          url={"https://resizer.otstatic.com/v2/photos/huge/24165521.jpg"}
-          thumbs={831}
-          name={"Joe's Bar & Grill"}
-          />
-          </MDBCol>
-        <MDBCol className="test" sm="9">
-          <MDBRow>
-            <MDBCol className="test category-container" size="12">
-              <span className="category">American</span>
-              <span className="category">Burger</span>
-              <span className="category">Beer</span>
-              <span className="category">Grill</span>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow className="amenity-container">
-            <MDBCol className="test" size="12">
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs" />
-              </h5>
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs">
-                  +
-                </MDBIcon>
-              </h5>
-              <h5 className="amenity blue">
-                <MDBIcon icon="wifi" className="icon fa-xs" />
-              </h5>
-              <h5 className="amenity brown">
-                <MDBIcon icon="bacon" className="icon fa-sm" />
-              </h5>
-              <span className="miles">0.5 Miles</span>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-      </MDBRow>
-      <hr className="rule" />
-      <MDBRow className="card-container">
-        <MDBCol className="test" sm="3">
-          <MDBRow>
-            <MDBCol className="test" size="12">
-              <img
-                src="https://assets3.thrillist.com/v1/image/2785413/size/gn-gift_guide_variable_c.jpg"
-                className="main-image rounded float-left"
-                alt="aligment"
-              />
-              <div className="thumbs-container red">
-                <span className="thumbs-count">739</span>
-                <span className="thumbs-up">
-                  <MDBIcon icon="thumbs-up" />
-                </span>
-              </div>
-              <h3 className="restaurant-title">El Limoncito</h3>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-        <MDBCol className="test" sm="9">
-          <MDBRow>
-            <MDBCol className="test" size="12" />
-          </MDBRow>
-          <MDBRow>
-            <MDBCol className="test category-container" size="12">
-              <span className="category">Mexican</span>
-              <span className="category">Spicy</span>
-              <span className="category">Tacos</span>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow className="amenity-container">
-            <MDBCol className="test" size="12">
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs" />
-              </h5>
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs">
-                  +
-                </MDBIcon>
-              </h5>
-              <h5 className="amenity blue">
-                <MDBIcon icon="wifi" className="icon fa-xs" />
-              </h5>
-              <h5 className="amenity blue">
-                <MDBIcon icon="suitcase" className="icon fa-sm" />
-              </h5>
-              <h5 className="amenity brown">
-                <MDBIcon icon="bacon" className="icon fa-sm" />
-              </h5>
-              <span className="miles">0.8 Miles</span>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-      </MDBRow>
-      <hr className="rule" />
-      <MDBRow className="card-container">
-        <MDBCol className="test" sm="3">
-          <MDBRow>
-            <MDBCol className="test" size="12">
-              <img
-                src="https://media.timeout.com/images/103820800/630/472/image.jpg"
-                className="main-image rounded float-left"
-                alt="aligment"
-              />
-              <div className="thumbs-container red">
-                <span className="thumbs-count">612</span>
-                <span className="thumbs-up">
-                  <MDBIcon icon="thumbs-up" />
-                </span>
-              </div>
-              <h3 className="restaurant-title">Best Halal</h3>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-        <MDBCol className="test" sm="9">
-          <MDBRow>
-            <MDBCol className="test category-container" size="12">
-              <span className="category">Arabic</span>
-              <span className="category">Halal</span>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow className="amenity-container">
-            <MDBCol className="test" size="12">
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs" />
-              </h5>
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs">
-                  +
-                </MDBIcon>
-              </h5>
-              <h5 className="amenity blue">
-                <MDBIcon icon="wifi" className="icon fa-xs" />
-              </h5>
-              <h5 className="amenity blue">
-                <MDBIcon icon="suitcase" className="icon fa-sm" />
-              </h5>
-              <h5 className="amenity brown">
-                <MDBIcon icon="bacon" className="icon fa-sm" />
-              </h5>
-              <span className="miles">1.3 Miles</span>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-      </MDBRow>
-      <hr className="rule" />
-      <MDBRow className="card-container">
-        <MDBCol className="test" sm="3">
-          <MDBRow>
-            <MDBCol className="test" size="12">
-              <img
-                src="https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/roast-turkey-pho-ck.jpg?itok=Vf6k6W0d"
-                className="main-image rounded float-left"
-                alt="aligment"
-              />
-              <div className="thumbs-container red">
-                <span className="thumbs-count">417</span>
-                <span className="thumbs-up">
-                  <MDBIcon icon="thumbs-up" />
-                </span>
-              </div>
-              <h3 className="restaurant-title">Pho 64</h3>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-        <MDBCol className="test" sm="9">
-          <MDBRow>
-            <MDBCol className="test category-container" size="12">
-              <span className="category">Vietnamese</span>
-              <span className="category">Noodles</span>
-              <span className="category">Soup</span>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow className="amenity-container">
-            <MDBCol className="test" size="12">
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs" />
-              </h5>
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs">
-                  +
-                </MDBIcon>
-              </h5>
-              <h5 className="amenity blue">
-                <MDBIcon icon="wifi" className="icon fa-xs" />
-              </h5>
-              <h5 className="amenity blue">
-                <MDBIcon icon="suitcase" className="icon fa-sm" />
-              </h5>
-              <h5 className="amenity brown">
-                <MDBIcon icon="bacon" className="icon fa-sm" />
-              </h5>
-              <span className="miles">1.8 Miles</span>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-      </MDBRow>
-      <hr className="rule" />
-      <MDBRow className="card-container">
-        <MDBCol className="test" sm="3">
-          <MDBRow>
-            <MDBCol className="test" size="12">
-              <img
-                src="https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg"
-                className="main-image rounded float-left"
-                alt="aligment"
-              />
-              <div className="thumbs-container red">
-                <span className="thumbs-count">368</span>
-                <span className="thumbs-up">
-                  <MDBIcon icon="thumbs-up" />
-                </span>
-              </div>
-              <h3 className="restaurant-title">China Express</h3>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-        <MDBCol className="test" sm="9">
-          <MDBRow>
-            <MDBCol className="test category-container" size="12">
-              <span className="category">Chinese</span>
-              <span className="category">Spicy</span>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow className="amenity-container">
-            <MDBCol className="test" size="12">
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs" />
-              </h5>
-              <h5 className="amenity green">
-                <MDBIcon icon="leaf" className="icon fa-xs">
-                  +
-                </MDBIcon>
-              </h5>
-              <h5 className="amenity blue">
-                <MDBIcon icon="suitcase" className="icon fa-sm" />
-              </h5>
-              <h5 className="amenity brown">
-                <MDBIcon icon="bacon" className="icon fa-sm" />
-              </h5>
-              <span className="miles">2.1 Miles</span>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-      </MDBRow>
-      <hr className="rule" />
-      <MDBRow className="card-container">
-      <MDBCol className="test" sm="3">
-      <ImageCard 
-      url={"https://resizer.otstatic.com/v2/photos/huge/24165521.jpg"}
-      thumbs={831}
-      name={"Joe's Bar & Grill"}
-      />
-      </MDBCol>
-      <MDBCol className="test" sm="9">
-        <MDBRow>
-          <MDBCol className="test category-container" size="12">
-            <span className="category">American</span>
-            <span className="category">Burger</span>
-            <span className="category">Beer</span>
-            <span className="category">Grill</span>
-          </MDBCol>
-        </MDBRow>
-        <MDBRow className="amenity-container">
-          <MDBCol className="test" size="12">
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs" />
-            </h5>
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs">
-                +
-              </MDBIcon>
-            </h5>
-            <h5 className="amenity blue">
-              <MDBIcon icon="wifi" className="icon fa-xs" />
-            </h5>
-            <h5 className="amenity brown">
-              <MDBIcon icon="bacon" className="icon fa-sm" />
-            </h5>
-            <span className="miles">0.5 Miles</span>
-          </MDBCol>
-        </MDBRow>
-      </MDBCol>
-    </MDBRow>
-    <hr className="rule" />
-    <MDBRow className="card-container">
-      <MDBCol className="test" sm="3">
-        <MDBRow>
-          <MDBCol className="test" size="12">
-            <img
-              src="https://assets3.thrillist.com/v1/image/2785413/size/gn-gift_guide_variable_c.jpg"
-              className="main-image rounded float-left"
-              alt="aligment"
-            />
-            <div className="thumbs-container red">
-              <span className="thumbs-count">739</span>
-              <span className="thumbs-up">
-                <MDBIcon icon="thumbs-up" />
-              </span>
-            </div>
-            <h3 className="restaurant-title">El Limoncito</h3>
-          </MDBCol>
-        </MDBRow>
-      </MDBCol>
-      <MDBCol className="test" sm="9">
-        <MDBRow>
-          <MDBCol className="test" size="12" />
-        </MDBRow>
-        <MDBRow>
-          <MDBCol className="test category-container" size="12">
-            <span className="category">Mexican</span>
-            <span className="category">Spicy</span>
-            <span className="category">Tacos</span>
-          </MDBCol>
-        </MDBRow>
-        <MDBRow className="amenity-container">
-          <MDBCol className="test" size="12">
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs" />
-            </h5>
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs">
-                +
-              </MDBIcon>
-            </h5>
-            <h5 className="amenity blue">
-              <MDBIcon icon="wifi" className="icon fa-xs" />
-            </h5>
-            <h5 className="amenity blue">
-              <MDBIcon icon="suitcase" className="icon fa-sm" />
-            </h5>
-            <h5 className="amenity brown">
-              <MDBIcon icon="bacon" className="icon fa-sm" />
-            </h5>
-            <span className="miles">0.8 Miles</span>
-          </MDBCol>
-        </MDBRow>
-      </MDBCol>
-    </MDBRow>
-    <hr className="rule" />
-    <MDBRow className="card-container">
-      <MDBCol className="test" sm="3">
-        <MDBRow>
-          <MDBCol className="test" size="12">
-            <img
-              src="https://media.timeout.com/images/103820800/630/472/image.jpg"
-              className="main-image rounded float-left"
-              alt="aligment"
-            />
-            <div className="thumbs-container red">
-              <span className="thumbs-count">612</span>
-              <span className="thumbs-up">
-                <MDBIcon icon="thumbs-up" />
-              </span>
-            </div>
-            <h3 className="restaurant-title">Best Halal</h3>
-          </MDBCol>
-        </MDBRow>
-      </MDBCol>
-      <MDBCol className="test" sm="9">
-        <MDBRow>
-          <MDBCol className="test category-container" size="12">
-            <span className="category">Arabic</span>
-            <span className="category">Halal</span>
-          </MDBCol>
-        </MDBRow>
-        <MDBRow className="amenity-container">
-          <MDBCol className="test" size="12">
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs" />
-            </h5>
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs">
-                +
-              </MDBIcon>
-            </h5>
-            <h5 className="amenity blue">
-              <MDBIcon icon="wifi" className="icon fa-xs" />
-            </h5>
-            <h5 className="amenity blue">
-              <MDBIcon icon="suitcase" className="icon fa-sm" />
-            </h5>
-            <h5 className="amenity brown">
-              <MDBIcon icon="bacon" className="icon fa-sm" />
-            </h5>
-            <span className="miles">1.3 Miles</span>
-          </MDBCol>
-        </MDBRow>
-      </MDBCol>
-    </MDBRow>
-    <hr className="rule" />
-    <MDBRow className="card-container">
-      <MDBCol className="test" sm="3">
-        <MDBRow>
-          <MDBCol className="test" size="12">
-            <img
-              src="https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/roast-turkey-pho-ck.jpg?itok=Vf6k6W0d"
-              className="main-image rounded float-left"
-              alt="aligment"
-            />
-            <div className="thumbs-container red">
-              <span className="thumbs-count">417</span>
-              <span className="thumbs-up">
-                <MDBIcon icon="thumbs-up" />
-              </span>
-            </div>
-            <h3 className="restaurant-title">Pho 64</h3>
-          </MDBCol>
-        </MDBRow>
-      </MDBCol>
-      <MDBCol className="test" sm="9">
-        <MDBRow>
-          <MDBCol className="test category-container" size="12">
-            <span className="category">Vietnamese</span>
-            <span className="category">Noodles</span>
-            <span className="category">Soup</span>
-          </MDBCol>
-        </MDBRow>
-        <MDBRow className="amenity-container">
-          <MDBCol className="test" size="12">
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs" />
-            </h5>
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs">
-                +
-              </MDBIcon>
-            </h5>
-            <h5 className="amenity blue">
-              <MDBIcon icon="wifi" className="icon fa-xs" />
-            </h5>
-            <h5 className="amenity blue">
-              <MDBIcon icon="suitcase" className="icon fa-sm" />
-            </h5>
-            <h5 className="amenity brown">
-              <MDBIcon icon="bacon" className="icon fa-sm" />
-            </h5>
-            <span className="miles">1.8 Miles</span>
-          </MDBCol>
-        </MDBRow>
-      </MDBCol>
-    </MDBRow>
-    <hr className="rule" />
-    <MDBRow className="card-container">
-      <MDBCol className="test" sm="3">
-        <MDBRow>
-          <MDBCol className="test" size="12">
-            <img
-              src="https://i.ndtvimg.com/i/2016-06/chinese-625_625x350_81466064119.jpg"
-              className="main-image rounded float-left"
-              alt="aligment"
-            />
-            <div className="thumbs-container red">
-              <span className="thumbs-count">368</span>
-              <span className="thumbs-up">
-                <MDBIcon icon="thumbs-up" />
-              </span>
-            </div>
-            <h3 className="restaurant-title">China Express</h3>
-          </MDBCol>
-        </MDBRow>
-      </MDBCol>
-      <MDBCol className="test" sm="9">
-        <MDBRow>
-          <MDBCol className="test category-container" size="12">
-            <span className="category">Chinese</span>
-            <span className="category">Spicy</span>
-          </MDBCol>
-        </MDBRow>
-        <MDBRow className="amenity-container">
-          <MDBCol className="test" size="12">
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs" />
-            </h5>
-            <h5 className="amenity green">
-              <MDBIcon icon="leaf" className="icon fa-xs">
-                +
-              </MDBIcon>
-            </h5>
-            <h5 className="amenity blue">
-              <MDBIcon icon="suitcase" className="icon fa-sm" />
-            </h5>
-            <h5 className="amenity brown">
-              <MDBIcon icon="bacon" className="icon fa-sm" />
-            </h5>
-            <span className="miles">2.1 Miles</span>
-          </MDBCol>
-        </MDBRow>
-      </MDBCol>
-    </MDBRow>
-    <hr className="rule" />
+        {
+          this.props.restaurants.map((restaurant, index) => {
+            console.log(restaurant);
+            return(
+              <div key={index}>
+                  <MDBRow className="card-container" >
+                  <MDBCol className="test" sm="3">
+                    <ImageCard
+                      url={restaurant.imageUrl}
+                      thumbs={restaurant.thumbsUpId.food + restaurant.thumbsUpId.service + restaurant.thumbsUpId.atmosphere}
+                      name={restaurant.name}
+                    />
+                  </MDBCol>
+                  <MDBCol className="test" sm="9">
+                    <MDBRow>
+                      <MDBCol className="test category-container" size="12">
+                        {
+                          restaurant.categories.map((amenity, index) => {
+                            return (
+                              <span key={index} className="category">{amenity}</span>
+                            )
+                          })
+                        }
+                      </MDBCol>
+                    </MDBRow>
+                    <MDBRow className="amenity-container">
+                      <MDBCol className="test" size="12">
+                        <h5 className="amenity green">
+                          <MDBIcon icon="leaf" className="icon fa-xs" />
+                        </h5>
+                        <h5 className="amenity green">
+                          <MDBIcon icon="leaf" className="icon fa-xs">
+                            +
+                          </MDBIcon>
+                        </h5>
+                        <h5 className="amenity blue">
+                          <MDBIcon icon="wifi" className="icon fa-xs" />
+                        </h5>
+                        <h5 className="amenity brown">
+                          <MDBIcon icon="bacon" className="icon fa-sm" />
+                        </h5>
+                        <span className="miles">0.5 Miles</span>
+                      </MDBCol>
+                    </MDBRow>
+                  </MDBCol>
+                </MDBRow>
+                <hr className="rule" />
+                </div>
+            );
+          })
+        }
         </MDBContainer>
       </Wrapper>
     );

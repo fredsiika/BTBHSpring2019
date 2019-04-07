@@ -1,39 +1,75 @@
-# The following types define the data model of the example service
-# based on which the GraphQL API is generated
-
-type User @model {
+type Restaurant @model {
   id: ID! @isUnique
-  name: String
-  dateOfBirth: DateTime
+  createdAt: DateTime!
+  updatedAt: DateTime!
 
-  # Uncomment below - you can declare relations between models like this
-
-  # posts: [Post!]! @relation(name: "UserPosts")
+  name: String!
+  subName: String
+  categories: [String!]!
+  amenities: [String!]
+  streetAddress: String!
+  city: String!
+  state: String!
+  zip: String!
+  phone: String!
+  email: String
+  website: String
+  imageUrl: String! @migrationValue(value: "")
+  
+  storyId: Story @relation(name: "RestaurantStory")
+  thumbsUpId: ThumbsUp @relation(name: "RestaurantThumbsUp")
 }
-
-
-# Uncomment the model below as well
-
-# type Post @model {
-#   id: ID! @isUnique
-#   title: String!
-#
-#   # Every relation also required a back-relation (to determine 1:1, 1:n or n:m)
-#   author: User! @relation(name: "UserPosts")
-# }
 
 type Story @model {
   id: ID! @isUnique
   createdAt: DateTime!
   updatedAt: DateTime!
-  title: String!
-  subtitle: String!
+
+  description: String! 
+  images: [String!]! 
+
+  restaurantId: Restaurant @relation(name: "RestaurantStory")
+  qna: [QnA!]! @relation(name: "StoryQnA")
 }
 
-type Query {
-   Story {
-     id
-     title
-     subtitle
-   }
+type ThumbsUp @model {
+  id: ID! @isUnique
+  updatedAt: DateTime!
+
+  food: Int!
+  service: Int!
+  atmosphere: Int!
+
+  restaurantId: Restaurant @relation(name: "RestaurantThumbsUp")
+}
+
+type Review @model {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  title: String!
+  description: String!
+
+  userId: NotAUser @relation(name: "ReviewUser")
+}
+
+type NotAUser @model {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  firstName: String!
+  lastName: String!
+
+  reviews: [Review!]! @relation(name: "ReviewUser")
+}
+
+type QnA @model {
+  id: ID! @isUnique
+
+  question: String!
+  answer: String!
+
+  storyId: Story @relation(name: "StoryQnA")
 }
