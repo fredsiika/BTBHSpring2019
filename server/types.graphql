@@ -1,3 +1,20 @@
+type Foodie @model{
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  firstName: String!
+  lastName: String!
+  username: String!
+  authEmail: String!
+  password: String!
+  phone: String
+  profileImage: String
+  isRestaurant: Boolean @defaultValue(value: false)
+
+  restaurantID: Restaurant @relation(name: "FoodieRestaurant")
+}
+
 type Restaurant @model {
   id: ID! @isUnique
   createdAt: DateTime!
@@ -16,6 +33,7 @@ type Restaurant @model {
   website: String
   imageUrl: String! @migrationValue(value: "")
   
+  foodieID: Foodie @relation(name: "FoodieRestaurant")
   storyId: Story @relation(name: "RestaurantStory")
   thumbsUpId: ThumbsUp @relation(name: "RestaurantThumbsUp")
 }
