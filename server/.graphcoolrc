@@ -1,0 +1,3 @@
+targets:
+  Localateur: shared-us-west-2/cju60van4684y0181qumekeib
+  default: Localateur

@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faFilter, faBars, faMap } from '@fortawesome/free-solid-svg-icons'
-
 import styled from 'styled-components';
 
 import Navbar from './shared/navbar'
@@ -11,8 +8,18 @@ import ListPage from './pages/List';
 import MapPage from './pages/Map';
 import HomePage from './pages/Home';
 import FilterPage from './pages/Filter';
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { ApolloClient } from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import { HttpLink } from 'apollo-link-http'
 
-library.add(faFilter, faBars, faMap);
+const httpLink = new HttpLink({ uri: 'https://api.graph.cool/simple/v1/cju60van4684y0181qumekeib' })
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache()
+})
+
 
 const Wrapper = styled.div`
   margin-top: 40px;
@@ -68,6 +75,7 @@ class App extends Component {
     return (
       <div className="App">
         <Wrapper>
+        <ApolloProvider client={client} >
           <Router>
             <Navbar/>
             <Switch>
@@ -77,6 +85,7 @@ class App extends Component {
               <Route exact path="/filter" component={() => <FilterPage handleCategories={this.handleCategories} categoryFilters={this.categoryFilters}/>}/>
             </Switch>
           </Router>
+          </ApolloProvider>
         </Wrapper>
       </div>
     );

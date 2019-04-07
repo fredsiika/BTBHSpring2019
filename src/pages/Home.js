@@ -7,9 +7,23 @@ import {
   MDBCarouselInner,
   MDBCarouselItem
 } from "mdbreact";
+import { withRouter } from 'react-router-dom'
 import styled from "styled-components";
 import Video from "../shared/video";
 import ImageCard from "../shared/image-card";
+
+import { graphql } from 'react-apollo';
+import gpl from 'graphql-tag';
+
+const CREATE_STORY_MUTATION = gpl`
+  mutation CreateStoryMutation($title: String!, $subtitle: String!) {
+    createStory(title: $title, subtitle: $subtitle) {
+      title
+      subtitle
+      id
+    }
+  }
+`;
 
 const Wrapper = styled.div`
   margin-top: 60px;
@@ -23,6 +37,22 @@ const Wrapper = styled.div`
 `;
 
 class HomePage extends Component {
+
+  state = {
+    title: "test",
+    subtitle: "test"
+  }
+
+  handleUpdate = async () => {
+    console.log("clicked");
+    const {title, subtitle} = this.state;
+    await this.props.createStoryMutation({variables: {title, subtitle}})
+    .then((ret) => {
+      console.log(ret.data.createStory.id)
+    });
+    this.props.history.replace('/');
+  }
+
   render() {
     return (
       <Wrapper>
@@ -30,6 +60,8 @@ class HomePage extends Component {
           <MDBRow>
             <MDBCol>
               <Video />
+              <button onClick={this.handleUpdate}
+               className="btn btn-primary"></button>
             </MDBCol>
           </MDBRow>
           <MDBRow>
@@ -209,4 +241,5 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+const CreatePageWithMutation = graphql(CREATE_STORY_MUTATION, {name: 'createStoryMutation'})(HomePage)
+export default withRouter(CreatePageWithMutation);

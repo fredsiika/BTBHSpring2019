@@ -1,0 +1,9 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "My Graphcool Service",
+  "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "react-apollo": "^2.5.4"
+  }
+}
