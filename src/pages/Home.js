@@ -1,16 +1,12 @@
 import React, { Component } from "react";
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-} from "mdbreact";
-import { withRouter } from 'react-router-dom'
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import Video from "../shared/video";
 import ImageCard from "../shared/image-card";
 
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
+import { graphql } from "react-apollo";
+import gql from "graphql-tag";
 
 const CREATE_STORY_MUTATION = gql`
   mutation CreateStoryMutation($title: String!, $subtitle: String!) {
@@ -29,26 +25,15 @@ const Wrapper = styled.div`
     padding-top: 15px;
     /* padding-right: 1px; */
     /* padding-left: 1px; */
-    display: inline-block;
+    /* display: inline-block; */
   }
 `;
 
 class HomePage extends Component {
-
   state = {
     title: "test",
     subtitle: "test"
-  }
-
-  // handleUpdate = async () => {
-  //   console.log("clicked");
-  //   const {title, subtitle} = this.state;
-  //   await this.props.createStoryMutation({variables: {title, subtitle}})
-  //   .then((ret) => {
-  //     console.log(ret.data.createStory.id)
-  //   });
-  //   this.props.history.replace('/');
-  // }
+  };
 
   render() {
     return (
@@ -59,27 +44,35 @@ class HomePage extends Component {
               <Video />
             </MDBCol>
           </MDBRow>
-          {
-            this.props.restaurants.map((restaurant, index) => {
-              return(
-                
-                <MDBRow key={index}>
-                  <MDBCol className="test" size="12">
-                    <ImageCard
-                      url={restaurant.imageUrl}
-                      thumbs={restaurant.thumbsUp || 0}
-                      name={restaurant.name}
-                    />
-                  </MDBCol>
-                </MDBRow>
+          <MDBRow>
+            {
+              // <MDBCol className="test" sm="12" md='6'>
+              //           <ImageCard
+              //             url={restaurant.imageUrl}
+              //             thumbs={restaurant.thumbsUp || 0}
+              //             name={restaurant.name}
+              //           />
+              //         </MDBCol>
+            }
+            {this.props.restaurants.map((restaurant, index) => {
+              return (
+                <MDBCol className="test" sm="12" md="6" lg="4">
+                  <ImageCard
+                    url={restaurant.imageUrl}
+                    thumbs={restaurant.thumbsUp || 0}
+                    name={restaurant.name}
+                  />
+                </MDBCol>
               );
-            })
-          }
+            })}
+          </MDBRow>
         </MDBContainer>
       </Wrapper>
     );
   }
 }
 
-const CreatePageWithMutation = graphql(CREATE_STORY_MUTATION, {name: 'createStoryMutation'})(HomePage)
+const CreatePageWithMutation = graphql(CREATE_STORY_MUTATION, {
+  name: "createStoryMutation"
+})(HomePage);
 export default withRouter(CreatePageWithMutation);
