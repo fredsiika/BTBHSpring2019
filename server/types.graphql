@@ -10,9 +10,10 @@ type Foodie @model{
   password: String!
   phone: String
   profileImage: String
-  isRestaurant: Boolean @defaultValue(value: false)
+  isOwner: Boolean! @defaultValue(value: false)
 
   restaurantID: Restaurant @relation(name: "FoodieRestaurant")
+  reviews: [Review!]! @relation(name: "FoodieReview")
 }
 
 type Restaurant @model {
@@ -31,7 +32,7 @@ type Restaurant @model {
   phone: String!
   email: String
   website: String
-  imageUrl: String! @migrationValue(value: "")
+  imageUrl: String!
   
   foodieID: Foodie @relation(name: "FoodieRestaurant")
   storyId: Story @relation(name: "RestaurantStory")
@@ -47,7 +48,7 @@ type Story @model {
   images: [String!]! 
 
   restaurantId: Restaurant @relation(name: "RestaurantStory")
-  qna: [QnA!]! @relation(name: "StoryQnA")
+  contents: [Content!]! @relation(name: "StoryContent")
 }
 
 type ThumbsUp @model {
@@ -69,25 +70,15 @@ type Review @model {
   title: String!
   description: String!
 
-  userId: NotAUser @relation(name: "ReviewUser")
+  foodieId: Foodie @relation(name: "FoodieReview")
 }
 
-type NotAUser @model {
-  id: ID! @isUnique
-  createdAt: DateTime!
-  updatedAt: DateTime!
-
-  firstName: String!
-  lastName: String!
-
-  reviews: [Review!]! @relation(name: "ReviewUser")
-}
-
-type QnA @model {
+type Content @model {
   id: ID! @isUnique
 
-  question: String!
-  answer: String!
+  title: String!
+  text: String!
+  position: Int!
 
-  storyId: Story @relation(name: "StoryQnA")
+  storyId: Story @relation(name: "StoryContent")
 }
