@@ -40,8 +40,8 @@ class App extends Component {
             <Router>
               <Navbar/>
               <Switch>
-                <Route exact path="/list" component={() => <HomePage restaurants={this.state.allRestaurants}/>}/>
-                <Route exact path="/" component={() => <ListPage restaurants={this.state.allRestaurants}/>}/>
+                <Route exact path="/" component={() => <HomePage restaurants={this.state.allRestaurants}/>}/>
+                <Route exact path="/list" component={() => <ListPage restaurants={this.state.allRestaurants}/>}/>
                 <Route exact path="/map" component={MapPage} />
                 <Route exact path="/filter" component={() => <FilterPage handleCategories={this.handleCategories} categoryFilters={this.categoryFilters}/>}/>
               </Switch>
