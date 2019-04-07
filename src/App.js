@@ -8,24 +8,9 @@ import ListPage from './pages/List';
 import MapPage from './pages/Map';
 import HomePage from './pages/Home';
 import FilterPage from './pages/Filter';
-import { InMemoryCache } from 'apollo-cache-inmemory'
-import { ApolloClient } from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
-import { HttpLink } from 'apollo-link-http'
 
-const httpLink = new HttpLink({ uri: 'https://api.graph.cool/simple/v1/cju60van4684y0181qumekeib' })
-
-const client = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache()
-})
-
-
-const Wrapper = styled.div`
-  margin-top: 40px;
-  /* background-color: #FFFDFB; */
-  background-color: #FAFAFA;
-`;
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 
 const seedData = [
   {
@@ -67,29 +52,55 @@ class App extends Component {
     })
   }
 
+  componentDidMount(){
+    this.props.allStoriesQuery.refetch()
+    .then((ret) => {
+      console.log(ret);
+    });
+  }
+
   componentDidUpdate() {
-    console.log("App: ",this.state.categoryFilters);
+    // console.log("App: ",this.state.categoryFilters);
   }
 
   render() {
     return (
-      <div className="App">
         <Wrapper>
-        <ApolloProvider client={client} >
-          <Router>
-            <Navbar/>
-            <Switch>
-              <Route exact path="/" component={() => <HomePage seedData={seedData}/>}/>
-              <Route exact path="/list" component={ListPage}/>
-              <Route exact path="/map" component={MapPage} />
-              <Route exact path="/filter" component={() => <FilterPage handleCategories={this.handleCategories} categoryFilters={this.categoryFilters}/>}/>
-            </Switch>
+            <Router>
+              <Navbar/>
+              <Switch>
+                <Route exact path="/" component={() => <HomePage seedData={seedData}/>}/>
+                <Route exact path="/list" component={ListPage}/>
+                <Route exact path="/map" component={MapPage} />
+                <Route exact path="/filter" component={() => <FilterPage handleCategories={this.handleCategories} categoryFilters={this.categoryFilters}/>}/>
+              </Switch>
           </Router>
-          </ApolloProvider>
         </Wrapper>
-      </div>
     );
   }
 }
 
-export default App;
+const GET_STORIES = gql`
+  query {
+     allStories{
+      title
+      subtitle
+      id
+     } 
+  }
+`;
+
+const Wrapper = styled.div`
+  margin-top: 40px;
+  /* background-color: #FFFDFB; */
+  background-color: #FAFAFA;
+`;
+
+const AppPageWithQuery = graphql(GET_STORIES, {
+  name: 'allStoriesQuery',
+  options: {
+    fetchPolicy: 'network-only',
+  },
+})(App)
+export default AppPageWithQuery;
+// export default App;

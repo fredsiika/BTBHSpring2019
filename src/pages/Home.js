@@ -13,9 +13,9 @@ import Video from "../shared/video";
 import ImageCard from "../shared/image-card";
 
 import { graphql } from 'react-apollo';
-import gpl from 'graphql-tag';
+import gql from 'graphql-tag';
 
-const CREATE_STORY_MUTATION = gpl`
+const CREATE_STORY_MUTATION = gql`
   mutation CreateStoryMutation($title: String!, $subtitle: String!) {
     createStory(title: $title, subtitle: $subtitle) {
       title
