@@ -74,7 +74,7 @@ const GET_STORIES = gql`
 const Wrapper = styled.div`
   margin-top: 40px;
   /* background-color: #FFFDFB; */
-  background-color: #FAFAFA;
+  background-color: white;
 `;
 
 const AppPageWithQuery = graphql(GET_STORIES, {
