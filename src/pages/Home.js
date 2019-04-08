@@ -40,16 +40,6 @@ class HomePage extends Component {
     subtitle: "test"
   }
 
-  handleUpdate = async () => {
-    console.log("clicked");
-    const {title, subtitle} = this.state;
-    await this.props.createStoryMutation({variables: {title, subtitle}})
-    .then((ret) => {
-      console.log(ret.data.createStory.id)
-    });
-    this.props.history.replace('/');
-  }
-
   render() {
     return (
       <Wrapper>
