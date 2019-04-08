@@ -126,6 +126,10 @@ const Wrapper = styled.div`
 `;
 
 class ListView extends Component {
+  componentDidMount() {
+    console.log("IF THIS LOGS, I MOUNT");
+  }
+
   render() {
     return (
       <Wrapper>
