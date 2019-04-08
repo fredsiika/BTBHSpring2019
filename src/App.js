@@ -45,7 +45,7 @@ class App extends Component {
                 <Route exact path="/list" component={() => <ListPage restaurants={this.state.allRestaurants}/>}/>
                 <Route exact path="/map" component={MapPage} />
                 <Route exact path="/filter" component={() => <FilterPage handleCategories={this.handleCategories} categoryFilters={this.categoryFilters}/>}/>
-                <Route exact path="/story/:id" component={StoryPage} />
+                <Route path="/story/:id" component={StoryPage} />
               </Switch>
           </Router>
         </Wrapper>

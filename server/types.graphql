@@ -37,7 +37,7 @@ type Restaurant @model {
   foodieID: Foodie @relation(name: "FoodieRestaurant")
   storyId: Story @relation(name: "RestaurantStory")
   thumbsUpId: ThumbsUp @relation(name: "RestaurantThumbsUp")
-  amenities: [Amenity!]! @relation(name: "ResturantAmenities")
+  amenitiesList: [Amenity!]! @relation(name: "ResturantAmenities")
 }
 
 type Story @model {
