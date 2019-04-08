@@ -41,6 +41,11 @@ const Wrapper = styled.div`
     color: #0099cc;
   }
 
+  .icon-red{
+    margin-left: 10px;
+    color: red;
+  }
+
   .header {
     margin-top: -18px;
     padding-top: 15px;
@@ -161,15 +166,15 @@ class ProfilePage extends Component {
                   <div className="thumbs-container">
                     <h5 className="thumbs-type">
                       Food
-                      <MDBIcon className="icon" far icon="thumbs-up" />
+                      <MDBIcon className="icon-red" far icon="thumbs-up" />
                     </h5>
                     <h5 className="thumbs-type">
                       Staff
-                      <MDBIcon className="icon" far icon="thumbs-up" />
+                      <MDBIcon className="icon-red" far icon="thumbs-up" />
                     </h5>
                     <h5 className="thumbs-type">
                       Category
-                      <MDBIcon className="icon" far icon="thumbs-up" />
+                      <MDBIcon className="icon-red" far icon="thumbs-up" />
                     </h5>
                   </div>
                   <div className="comment-container">
