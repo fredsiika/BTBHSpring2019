@@ -4,7 +4,6 @@ import {
   MDBRow,
   MDBCol,
   MDBIcon,
-  MDBCard,
   MDBInput
 } from "mdbreact";
 import styled from "styled-components";
@@ -135,7 +134,7 @@ class ProfilePage extends Component {
                   <img
                     className="profile-image"
                     src="https://pbs.twimg.com/media/DlYQbmHW4AA1RZH.jpg:large"
-                    alt="image"
+                    alt="text"
                   />
                 </MDBCol>
                 <MDBCol sm="8">

@@ -55,10 +55,6 @@ const Wrapper = styled.div`
 
 class ImageCard extends Component{
 
-    componentDidMount() {
-      console.log("HEIGHT: ", this.props.height)
-    }
-
     render() {
         return (
             <Wrapper {...this.props}>
