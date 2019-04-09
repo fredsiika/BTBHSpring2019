@@ -11,7 +11,7 @@ import styled from "styled-components";
 import Review from '../shared/review'
 
 const Wrapper = styled.div`
-  margin-top: 63px;
+  margin-top: 60px;
 
   .profile-image {
     height: 100%;
