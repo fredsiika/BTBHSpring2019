@@ -8,6 +8,7 @@ import {
   MDBInput
 } from "mdbreact";
 import styled from "styled-components";
+import Review from '../shared/review'
 
 const Wrapper = styled.div`
   margin-top: 63px;
@@ -68,58 +69,9 @@ const Wrapper = styled.div`
     background-color: #dfdfdf;
   }
 
-  .review-restaurant {
-    padding-top: 15px;
-    text-align: center;
-    font-size: 16px;
-  }
-
-  .review-container {
-  }
-
-  .thumb-type {
-    text-align: right;
-    font-size: 12px;
-    background-color: red;
-    display: inline;
-  }
-
-  .thumbs-container {
-    display: inline;
-    margin: 15px;
-  }
-
-  .comment-containter {
-    display: inline;
-  }
-
-  .card {
-    background-color: white;
-    border: 2px solid #f3f3f3;
-    align-self: auto;
-    margin: 15px auto;
-  }
-
-  .input {
-    height: 100%;
-    width: 100%;
-  }
-
-  .input:active {
-    outline-width: 0;
-  }
-
-  .input:focus {
-    outline-width: 0;
-  }
-
   .test {
     margin: auto;
     padding: 15px;
-  }
-
-  hr {
-    margin: 0;
   }
 `;
 
@@ -134,12 +86,12 @@ class ProfilePage extends Component {
                 <MDBCol sm="4">
                   <img
                     className="profile-image"
-                    src="https://pbs.twimg.com/media/DlYQbmHW4AA1RZH.jpg:large"
+                    src="https://m.media-amazon.com/images/S/aplus-media/vc/88a2891b-c398-4a59-a32b-d7621eccf0a4._CR0,0,300,300_PT0_SX300__.jpg"
                     alt="image"
                   />
                 </MDBCol>
                 <MDBCol sm="8">
-                  <h3 className="user-name">Joe Schmoe</h3>
+                  <h3 className="user-name">Jo Anne</h3>
                   <h5 className="verified">
                     Verified
                     <MDBIcon icon="check-circle icon" />
@@ -153,36 +105,14 @@ class ProfilePage extends Component {
               <h5 className="review-banner">Review History</h5>
             </MDBCol>
           </MDBRow>
-          <MDBRow>
-            <MDBCol
-              className="review-container offset-md-3"
-              size="12"
-              sm="12"
-              md="6"
-            >
-                <h5 className="review-restaurant">Miss Sue's Chicken</h5>
-                <hr />
-                <MDBRow className="test">
-                  <div className="thumbs-container">
-                    <h5 className="thumbs-type">
-                      Food
-                      <MDBIcon className="icon-red" far icon="thumbs-up" />
-                    </h5>
-                    <h5 className="thumbs-type">
-                      Staff
-                      <MDBIcon className="icon-red" far icon="thumbs-up" />
-                    </h5>
-                    <h5 className="thumbs-type">
-                      Category
-                      <MDBIcon className="icon-red" far icon="thumbs-up" />
-                    </h5>
-                  </div>
-                  <div className="comment-container">
-                    <MDBInput type="textarea" label="Example label" outline />
-                  </div>
-                </MDBRow>
-            </MDBCol>
-          </MDBRow>
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+          <Review />
+          <Review />
         </MDBContainer>
       </Wrapper>
     );
