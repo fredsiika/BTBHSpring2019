@@ -10,7 +10,7 @@ import {
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  margin-top: 63px;
+  margin-top: 60px;
 
   .profile-image {
     height: 100%;

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
 
 .main-image {
-    height: 100px;
+    height: ${props => props.height || "100px"};
     width: 100%;
     object-fit: cover;
   }
@@ -54,9 +54,14 @@ const Wrapper = styled.div`
 `;
 
 class ImageCard extends Component{
+
+    componentDidMount() {
+      console.log("HEIGHT: ", this.props.height)
+    }
+
     render() {
         return (
-            <Wrapper>
+            <Wrapper {...this.props}>
             <img
                 src={this.props.url}
                 className="main-image rounded float-left"
