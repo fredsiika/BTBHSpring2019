@@ -8,14 +8,12 @@ const flickityOptions = {
 };
 
 const Wrapper = styled.div`
-
   overflow-x: hidden;
 
   img {
     height: auto;
     width: 100%;
   }
-
 `;
 
 class Carousel extends Component {
