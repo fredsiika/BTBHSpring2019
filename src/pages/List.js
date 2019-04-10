@@ -137,7 +137,7 @@ class ListView extends Component {
                 <MDBRow className="card-container">
                   <MDBCol className="test" xs='6' sm="4">
                     <ImageCard
-                      url={restaurant.image}
+                      url={restaurant.imageUrl}
                       thumbs={
                         restaurant.thumbsUpId.food +
                         restaurant.thumbsUpId.service +

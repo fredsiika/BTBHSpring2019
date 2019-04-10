@@ -81,18 +81,18 @@ class Carousel extends Component {
                 disableImagesLoaded={false} // default false
                 reloadOnUpdate // default false
               >
-                <img   src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
-                <img  src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
-                <img  src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
-                <img   src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
-                <img  src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
-                <img  src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
-                <img   src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
-                <img  src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
-                <img  src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
-                <img   src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
-                <img  src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
-                <img  src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
+                <img alt="carousel" src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
+                <img alt="carousel" src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
+                <img alt="carousel" src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
+                <img alt="carousel" src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
+                <img alt="carousel" src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
+                <img alt="carousel" src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
+                <img alt="carousel" src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
+                <img alt="carousel" src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
+                <img alt="carousel" src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
+                <img alt="carousel" src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
+                <img alt="carousel" src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
+                <img alt="carousel" src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
               </Flickity>
           </MDBRow>
         </MDBContainer>

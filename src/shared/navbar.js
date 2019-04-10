@@ -93,7 +93,7 @@ class Navbar extends Component {
                   </Link>
                 </MDBNavItem>
                 <MDBNavItem className="mt-1"> 
-                  <Link className="navbar-button button" to="profile">
+                  <Link className="navbar-button button" to="/profile">
                     <MDBIcon icon="user-circle" />
                   </Link>
                 </MDBNavItem>
