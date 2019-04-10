@@ -36,7 +36,8 @@ const Wrapper = styled.div`
 
   .title {
     font-family: "Lobster Two", cursive;
-    font-size: 18px;
+    font-size: 20px;
+    letter-spacing: px;
   }
 `;
 
@@ -71,27 +72,27 @@ class Navbar extends Component {
             <MDBNavbarToggler onClick={this.toggleCollapse} />
             <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
               <MDBNavbarNav center="true">
-                <MDBNavItem active>
+                <MDBNavItem className="mt-1" active>
                   <Link className="navbar-button button" to="/map">
                     <MDBIcon icon="map" />
                   </Link>
                 </MDBNavItem>
-                <MDBNavItem>
+                <MDBNavItem className="mt-1" >
                   <Link className="navbar-button button" to="/list">
                     <MDBIcon icon="bars" />
                   </Link>
                 </MDBNavItem>
-                <MDBNavItem>
+                <MDBNavItem className="" >
                   <Link className="navbar-button button title" to="/">
-                    localateur
+                    Localateur
                   </Link>
                 </MDBNavItem>
-                <MDBNavItem>
+                <MDBNavItem className="mt-1" >
                   <Link className="navbar-button button" to="/story/12" >
                     <MDBIcon icon="filter" />
                   </Link>
                 </MDBNavItem>
-                <MDBNavItem>
+                <MDBNavItem className="mt-1"> 
                   <Link className="navbar-button button" to="profile">
                     <MDBIcon icon="user-circle" />
                   </Link>

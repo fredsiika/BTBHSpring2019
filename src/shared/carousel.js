@@ -9,12 +9,25 @@ const flickityOptions = {
 
 const Wrapper = styled.div`
   overflow-x: hidden;
+  overflow-y: hidden;
   height: 150px;
+  width: 100%;
   margin-bottom: 15px;
 
   img {
-    height: auto;
-    width: 100%;
+    height: 150px;
+    width : 150px;
+    margin: 0px 2px;
+    object-fit: cover;
+  }
+
+  img:first-child{
+    margin-left: 35px;
+  }
+
+  .slider-boxes{
+    border-radius: 5px;
+    background-color: red;
   }
 
   .flickity-page-dots{
@@ -36,20 +49,10 @@ const Wrapper = styled.div`
 
   .carousel:active{
     cursor: grabbing;
-    background-color: red;
-    overflow-y: hidden;
   }
 
   .carousel:focus{
     outline: none;
-  }
-
-  .carousel-image{
-    border-radius: 3px;
-    margin-left: -15px;
-    padding-left: 0px;
-    margin-right: 5px;
-    height: 100%;
   }
 
 `;
@@ -60,23 +63,12 @@ class Carousel extends Component {
     cellSelector: ".sliderBoxes",
     wrapAround: true,
     disableImagesLoaded: true,
-    freeScroll: true,
+    freeScroll: false,
     fullscreen: true,
     prevNextButtons: true,
     container: true,
   };
 
-  // componentDidMount = () => {
-  //   // You can register events in componentDidMount hook
-  //   this.flkty.on("settle", () => {
-  //     console.log(`current index is ${this.flkty.selectedIndex}`);
-  //   });
-  // };
-
-  // myCustomNext = () => {
-  //   // You can use Flickity API
-  //   this.flkty.next();
-  // };
   render() {
     return (
       <Wrapper>
@@ -89,15 +81,18 @@ class Carousel extends Component {
                 disableImagesLoaded={false} // default false
                 reloadOnUpdate // default false
               >
-              <MDBCol className="carousel-image" size='12'>
-              <img   src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
-              </MDBCol>
-              <MDBCol className="carousel-image" size='12'>
-              <img  src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
-              </MDBCol>
-              <MDBCol className="carousel-image" size='12'>
-              <img  src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
-              </MDBCol>
+                <img   src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
+                <img  src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
+                <img  src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
+                <img   src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
+                <img  src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
+                <img  src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
+                <img   src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
+                <img  src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
+                <img  src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
+                <img   src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/3607952/20150408-Burger_Joint_3-1.0.jpg" />
+                <img  src="https://2o7fsh4anuayrnrhe3us6v71-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/The-Secret-Burger-Joint-in-the-Parker-Meridien-Hotel.jpg" />
+                <img  src="https://irp-cdn.multiscreensite.com/b6050b0d/import/base/burgerandfries.jpg" />
               </Flickity>
           </MDBRow>
         </MDBContainer>
