@@ -4,7 +4,6 @@ import {
   MDBRow,
   MDBCol,
   MDBIcon,
-  MDBCard,
   MDBInput
 } from "mdbreact";
 import styled from "styled-components";
@@ -86,8 +85,8 @@ class ProfilePage extends Component {
                 <MDBCol sm="4">
                   <img
                     className="profile-image"
-                    src="https://m.media-amazon.com/images/S/aplus-media/vc/88a2891b-c398-4a59-a32b-d7621eccf0a4._CR0,0,300,300_PT0_SX300__.jpg"
-                    alt="image"
+                    src="https://pbs.twimg.com/media/DlYQbmHW4AA1RZH.jpg:large"
+                    alt="text"
                   />
                 </MDBCol>
                 <MDBCol sm="8">

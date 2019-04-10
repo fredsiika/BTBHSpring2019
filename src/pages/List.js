@@ -126,9 +126,6 @@ const Wrapper = styled.div`
 `;
 
 class ListView extends Component {
-  componentDidMount() {
-    console.log("IF THIS LOGS, I MOUNT");
-  }
 
   render() {
     return (
@@ -138,7 +135,7 @@ class ListView extends Component {
             return (
               <div key={index}>
                 <MDBRow className="card-container">
-                  <MDBCol className="test" sm="3">
+                  <MDBCol className="test" xs='6' sm="4">
                     <ImageCard
                       url={restaurant.imageUrl}
                       thumbs={
@@ -149,7 +146,7 @@ class ListView extends Component {
                       name={restaurant.name}
                     />
                   </MDBCol>
-                  <MDBCol className="test" sm="9">
+                  <MDBCol className="test" xs='6' sm="8">
                     <MDBRow>
                       <MDBCol className="test category-container" size="12">
                         {restaurant.categories.map((amenity, index) => {

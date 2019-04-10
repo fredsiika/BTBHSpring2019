@@ -34,7 +34,6 @@ class Amenity extends Component {
   };
 
   componentDidMount = () => {
-    console.log(this.props.name);
     var icon, color, plus;
     switch (this.props.name) {
       case "vegetarian":
