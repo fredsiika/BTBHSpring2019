@@ -31,7 +31,8 @@ type Restaurant @model {
   phone: String!
   email: String
   website: String
-  image: String!
+  imageUrl: String!
+  amenities: [String!] 
   
   foodieID: Foodie @relation(name: "FoodieRestaurant")
   storyId: Story @relation(name: "RestaurantStory")
@@ -91,7 +92,7 @@ type Content @model {
   title: String!
   text: String!
   position: Int!
-  image: [String!]!
+  imageUrl: [String!]!
 
   storyId: Story @relation(name: "StoryContent")
 }
