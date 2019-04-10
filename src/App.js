@@ -7,12 +7,12 @@ import Navbar from './shared/navbar'
 import ListPage from './pages/List';
 import MapPage from './pages/Map';
 import HomePage from './pages/Home';
-import FilterPage from './pages/Filter';
 import StoryPage from './pages/Story';
 import ProfilePage from './pages/Profile'
 
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import LeaveReview from './shared/leave-review';
 
 class App extends Component {
 
@@ -45,9 +45,9 @@ class App extends Component {
                 <Route exact path="/" component={() => <HomePage restaurants={this.state.allRestaurants}/>}/>
                 <Route exact path="/list" component={() => <ListPage restaurants={this.state.allRestaurants}/>}/>
                 <Route exact path="/map" component={MapPage} />
-                <Route exact path="/filter" component={() => <FilterPage handleCategories={this.handleCategories} categoryFilters={this.categoryFilters}/>}/>
                 <Route exact path="/story/:id" component={StoryPage} />
                 <Route exact path="/profile" component={() => <ProfilePage restaurants={this.state.allRestaurants}/>}/>
+                <Route exact path="/review" component={LeaveReview} />
               </Switch>
           </Router>
         </Wrapper>
@@ -84,4 +84,3 @@ const AppPageWithQuery = graphql(GET_STORIES, {
   },
 })(App)
 export default AppPageWithQuery;
-// export default App;

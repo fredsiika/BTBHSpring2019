@@ -6,90 +6,103 @@ import {
   MDBNavItem,
   MDBNavbarToggler,
   MDBCollapse,
-  MDBIcon
+  MDBIcon,
+  MDBModal
 } from "mdbreact";
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
+import styled from "styled-components";
+import FilterPage from "../pages/Filter";
 
 const Wrapper = styled.div`
-
-  .navbar-button{
+  .navbar-button {
     color: white !important;
   }
 
-  .navbar-button:visited{
+  .navbar-button:visited {
     color: white;
   }
 
-  .navbar-button:link{
+  .navbar-button:link {
     color: white;
   }
 
-  .navbar-button:hover{
+  .navbar-button:hover {
     color: white;
   }
 
-  .navbar-button:active{
+  .navbar-button:active {
     color: white;
   }
 
-  .title{
-    padding-top: 5px;
-    font-family: 'Lobster Two', cursive;
+  .title {
+    font-family: "Lobster Two", cursive;
     font-size: 18px;
   }
 `;
 
-
 class Navbar extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    filterIsOpen: false
   };
 
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
+  handleFilter = () => {
+    this.setState({
+      filterIsOpen: true
+    });
+  };
+
+  handleClose = () => {
+    console.log("handleClose ran");
+    this.setState({
+      filterIsOpen: false
+    })
+  }
+
   render() {
     return (
       <Wrapper>
-
-      <MDBNavbar fixed="top" color="red" dark expand>
-      <MDBContainer>
-
-        <MDBNavbarToggler  onClick={this.toggleCollapse} />
-        <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-          <MDBNavbarNav center="true">
-
-            <MDBNavItem active>
-              <Link className="navbar-button" to="/map">
-              <MDBIcon icon="map" />
-              </Link>
-            </MDBNavItem>
-            <MDBNavItem>
-              <Link className="navbar-button" to="/list">
-              <MDBIcon icon="bars" />
-              </Link>
-            </MDBNavItem>
-            <MDBNavItem>
-              <Link className="navbar-button title" to="/">localateur</Link>
-            </MDBNavItem>
-            <MDBNavItem>
-              <Link className="navbar-button" to="/filter">
-              <MDBIcon icon="filter" />
-              </Link>
-            </MDBNavItem>
-            <MDBNavItem>
-              <Link className="navbar-button" to="profile">
-              <MDBIcon icon="user-circle" />
-              </Link>
-            </MDBNavItem>
-          </MDBNavbarNav>
-        </MDBCollapse>
-        </MDBContainer>
-      </MDBNavbar>
-
-      
+        <MDBNavbar fixed="top" color="red" dark expand>
+          <MDBContainer>
+            <MDBNavbarToggler onClick={this.toggleCollapse} />
+            <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+              <MDBNavbarNav center="true">
+                <MDBNavItem active>
+                  <Link className="navbar-button button" to="/map">
+                    <MDBIcon icon="map" />
+                  </Link>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <Link className="navbar-button button" to="/list">
+                    <MDBIcon icon="bars" />
+                  </Link>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <Link className="navbar-button button title" to="/">
+                    localateur
+                  </Link>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <Link className="navbar-button button" to="/story/12" >
+                    <MDBIcon icon="filter" />
+                  </Link>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <Link className="navbar-button button" to="profile">
+                    <MDBIcon icon="user-circle" />
+                  </Link>
+                </MDBNavItem>
+              </MDBNavbarNav>
+            </MDBCollapse>
+          </MDBContainer>
+        </MDBNavbar>
+        <MDBModal centered isOpen={this.state.filterIsOpen}>
+          <FilterPage closeFilter={this.handleClose}/>
+        </MDBModal>
       </Wrapper>
     );
   }

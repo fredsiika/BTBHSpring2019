@@ -40,11 +40,6 @@ const Wrapper = styled.div`
     color: #0099cc;
   }
 
-  .icon-red{
-    margin-left: 10px;
-    color: red;
-  }
-
   .header {
     margin-top: -18px;
     padding-top: 15px;
