@@ -4,7 +4,6 @@ import {
   MDBRow,
   MDBCol,
   MDBIcon,
-  MDBInput
 } from "mdbreact";
 import styled from "styled-components";
 import Review from '../shared/review'

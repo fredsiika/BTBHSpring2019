@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import styled from "styled-components";
 import SliderPage from "../shared/slider";
 
@@ -57,8 +57,6 @@ const Wrapper = styled.div`
   .done {
     margin-top: 30px !important;
     margin-bottom: 15px !important;
-
-    background-color: #f44336;
   }
 `;
 
@@ -148,26 +146,36 @@ class FilterPage extends Component {
               />
             </MDBCol>
           </MDBRow>
+          <MDBContainer>
           <MDBRow>
-            <MDBCol size="12" className="mt-5">
-              {this.availableCategories.map((category, index) => {
-                return (
-                  <span
-                    key={index}
-                    className={
-                      this.state.activeCategories.includes(category)
-                        ? "category-on category"
-                        : "category-off category"
-                    }
-                    onClick={() => {
-                      this.handleCategory(category);
-                    }}
-                  >
-                    {category}
-                  </span>
-                );
-              })}
-            </MDBCol>
+          <MDBCol size="12" className="mt-5">
+            {this.availableCategories.map((category, index) => {
+              return (
+                <span
+                  key={index}
+                  className={
+                    this.state.activeCategories.includes(category)
+                      ? "category-on category"
+                      : "category-off category"
+                  }
+                  onClick={() => {
+                    this.handleCategory(category);
+                  }}
+                >
+                  {category}
+                </span>
+              );
+            })}
+          </MDBCol>
+        </MDBRow>
+          </MDBContainer>
+          
+          <MDBRow>
+              <MDBCol size="9" className="offset-1">
+                <MDBBtn className="btn btn-block done" color="primary" onClick={this.props.closeFilter}>
+                  DONE
+                </MDBBtn>
+              </MDBCol>
           </MDBRow>
         </MDBContainer>
       </Wrapper>

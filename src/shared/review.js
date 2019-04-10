@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import {
-    MDBContainer,
     MDBRow,
     MDBCol,
     MDBIcon,
-    MDBCard,
-    MDBInput
 } from "mdbreact";
 import styled from "styled-components";
 

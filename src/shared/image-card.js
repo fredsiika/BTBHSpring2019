@@ -3,8 +3,7 @@ import { MDBIcon } from "mdbreact";
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-
-.main-image {
+  .main-image {
     height: ${props => props.height || "100px"};
     width: 100%;
     object-fit: cover;
