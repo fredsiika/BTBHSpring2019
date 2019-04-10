@@ -128,7 +128,7 @@ class FilterPage extends Component {
   };
 
   componentDidUpdate(){
-    console.log("Filter: ", JSON.parse(JSON.stringify(this.availableCategories)));
+    // console.log("Filter: ", JSON.parse(JSON.stringify(this.availableCategories)));
   }
 
   render() {

@@ -7,7 +7,6 @@ import Navbar from './shared/navbar'
 import ListPage from './pages/List';
 import MapPage from './pages/Map';
 import HomePage from './pages/Home';
-import FilterPage from './pages/Filter';
 import StoryPage from './pages/Story';
 import ProfilePage from './pages/Profile'
 

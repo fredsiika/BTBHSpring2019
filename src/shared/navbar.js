@@ -87,7 +87,7 @@ class Navbar extends Component {
                   </Link>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <Link className="navbar-button button" onClick={this.handleFilter}>
+                  <Link className="navbar-button button" to="/story/12" >
                     <MDBIcon icon="filter" />
                   </Link>
                 </MDBNavItem>
