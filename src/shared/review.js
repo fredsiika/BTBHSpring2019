@@ -10,12 +10,8 @@ const Wrapper = styled.div`
 padding-bottom: 60px;
 
   .icon-red{
-<<<<<<< HEAD
-    // color: red;
-=======
     margin-left: 10px;
     color: red;
->>>>>>> 8ecc9dceec4a2dd5a8fa323928c48f9f94a7dfff
     margin-right: auto;
     text-align: center;
   }
