@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     height: 150px;
     margin: auto;
     display: block;
-    background-size: cover;
+    object-fit: cover;
   }
 
   .user-name {
@@ -85,7 +85,7 @@ class ProfilePage extends Component {
                 <MDBCol sm="4">
                   <img
                     className="profile-image"
-                    src="https://pbs.twimg.com/media/DlYQbmHW4AA1RZH.jpg:large"
+                    src="https://www.sheknows.com/wp-content/uploads/2018/08/female-chef-cooking-horiz_l179zv.jpeg"
                     alt="text"
                   />
                 </MDBCol>
