@@ -3,8 +3,7 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBIcon,
-  MDBInput
+  MDBIcon
 } from "mdbreact";
 import styled from "styled-components";
 import Review from '../shared/review'

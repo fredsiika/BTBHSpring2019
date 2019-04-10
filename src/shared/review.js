@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-    MDBContainer,
     MDBRow,
     MDBCol,
     MDBIcon,
@@ -12,7 +11,7 @@ const Wrapper = styled.div`
 padding-bottom: 60px;
 
   .icon-red{
-    color: red;
+    // color: red;
     margin-right: auto;
     text-align: center;
   }
@@ -22,7 +21,7 @@ padding-bottom: 60px;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
-    background-color: #ffd9d9;
+    background-color: #fff5f5;
     font-weight: 400;
   }
 
@@ -92,7 +91,6 @@ class Review extends Component {
                         <MDBRow className="thumbs-container">
                             <MDBCol className="thumbs-type">
                                 <MDBRow>
-                                    
                                     <MDBCol className="thumbs-seperator" size="12" sm="6" md="6" lg="6" xl="4"><h6>Food</h6></MDBCol>
                                     <MDBCol className="icon-red" size="10" sm="1" md="1" lg="1" xl="1">
                                         <MDBIcon far icon="thumbs-up" />
@@ -101,8 +99,7 @@ class Review extends Component {
                             </MDBCol>
                             <MDBCol className="thumbs-type">
                                 <MDBRow>
-                                    
-                                    <MDBCol className="thumbs-seperator" size="12" sm="6" md="6" lg="6" xl="4"><h6>Staff</h6></MDBCol>
+                                    <MDBCol className="thumbs-seperator" size="12" sm="6" md="6" lg="6" xl="4"><h6>Atmosphere</h6></MDBCol>
                                     <MDBCol className="icon-red" size="10" sm="1" md="1" lg="1" xl="1">
                                         <MDBIcon far icon="thumbs-up" />
                                     </MDBCol>
@@ -110,8 +107,7 @@ class Review extends Component {
                             </MDBCol>
                             <MDBCol className="thumbs-type">
                                 <MDBRow>
-                                    
-                                    <MDBCol className="thumbs-seperator" size="12" sm="6" md="6" lg="6" xl="4"><h6>Atmosphere</h6></MDBCol>
+                                    <MDBCol className="thumbs-seperator" size="12" sm="6" md="6" lg="6" xl="4"><h6>Staff</h6></MDBCol>
                                     <MDBCol className="icon-red" size="10" sm="1" md="1" lg="1" xl="1">
                                         <MDBIcon far icon="thumbs-up" />
                                     </MDBCol>
