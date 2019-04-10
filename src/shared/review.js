@@ -7,8 +7,11 @@ import {
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-padding-bottom: 60px;
+padding-bottom: 20px;
 
+  .container{
+      margin-bottom: 20px;
+    }
   .icon-red{
     margin-left: 10px;
     color: red;
@@ -31,7 +34,6 @@ padding-bottom: 60px;
 
   .review-text {
     text-align: justify;
-    text-overflow: ellipsis;
   }
 
   .thumbs-seperator {
@@ -41,6 +43,10 @@ padding-bottom: 60px;
   p {
     height: 100px;
     overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
 
   h6 {
@@ -61,8 +67,7 @@ padding-bottom: 60px;
   }
 
   hr {
-    margin: 0;
-    padding-bottom: 10px;
+    margin-top: 15px;
   }
 `;
 
@@ -72,13 +77,13 @@ class Review extends Component {
             <Wrapper>
                 <MDBRow>
                     <MDBCol
-                        className="offset-md-2"
+                        className="container offset-md-2 offset-lg-3"
                         size="12"
                         sm="12"
                         md="8"
+                        lg="6"
                     >
                         <h5 className="review-restaurant">Miss Sue's Chicken</h5>
-                        <hr />
                         <MDBRow>
                             <MDBCol size="12" className="review-text">
                                 <p>
@@ -90,29 +95,30 @@ class Review extends Component {
                         <MDBRow className="thumbs-container">
                             <MDBCol className="thumbs-type">
                                 <MDBRow>
-                                    <MDBCol className="thumbs-seperator" size="12" sm="6" md="6" lg="6" xl="4"><h6>Food</h6></MDBCol>
-                                    <MDBCol className="icon-red" size="10" sm="1" md="1" lg="1" xl="1">
+                                    <MDBCol className="thumbs-seperator" size="12" sm="6" xl="4"><h6>Food</h6></MDBCol>
+                                    <MDBCol className="icon-red" size="10" sm="1">
                                         <MDBIcon far icon="thumbs-up" />
                                     </MDBCol>
                                 </MDBRow>
                             </MDBCol>
                             <MDBCol className="thumbs-type">
                                 <MDBRow>
-                                    <MDBCol className="thumbs-seperator" size="12" sm="6" md="6" lg="6" xl="4"><h6>Atmosphere</h6></MDBCol>
-                                    <MDBCol className="icon-red" size="10" sm="1" md="1" lg="1" xl="1">
+                                    <MDBCol className="thumbs-seperator" size="12" sm="6" xl="4"><h6>Atmosphere</h6></MDBCol>
+                                    <MDBCol className="icon-red" size="10" sm="1">
                                         <MDBIcon far icon="thumbs-up" />
                                     </MDBCol>
                                 </MDBRow>
                             </MDBCol>
                             <MDBCol className="thumbs-type">
                                 <MDBRow>
-                                    <MDBCol className="thumbs-seperator" size="12" sm="6" md="6" lg="6" xl="4"><h6>Staff</h6></MDBCol>
-                                    <MDBCol className="icon-red" size="10" sm="1" md="1" lg="1" xl="1">
+                                    <MDBCol className="thumbs-seperator" size="12" sm="6" xl="4"><h6>Staff</h6></MDBCol>
+                                    <MDBCol className="icon-red" size="10" sm="1">
                                         <MDBIcon far icon="thumbs-up" />
                                     </MDBCol>
                                 </MDBRow>
                             </MDBCol>
                         </MDBRow>
+                        <hr />
                         {/* <div className="comment-container">
                                 <MDBInput type="textarea" label="Example label" outline />
                                 </div> */}

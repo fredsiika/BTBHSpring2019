@@ -50,7 +50,7 @@ class HomePage extends Component {
                 <MDBCol key={index} className="test" size="6
                 " sm="6" md="6" lg="4">
                   <ImageCard
-                    url={restaurant.imageUrl}
+                    url={restaurant.image}
                     thumbs={
                       restaurant.thumbsUpId.food +
                       restaurant.thumbsUpId.service +

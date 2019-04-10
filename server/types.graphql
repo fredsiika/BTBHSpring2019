@@ -24,7 +24,6 @@ type Restaurant @model {
   name: String!
   subName: String
   categories: [String!]!
-  amenities: [String!]
   streetAddress: String!
   city: String!
   state: String!
@@ -32,12 +31,12 @@ type Restaurant @model {
   phone: String!
   email: String
   website: String
-  imageUrl: String!
+  image: String!
   
   foodieID: Foodie @relation(name: "FoodieRestaurant")
   storyId: Story @relation(name: "RestaurantStory")
   thumbsUpId: ThumbsUp @relation(name: "RestaurantThumbsUp")
-  amenitiesList: [Amenity!]! @relation(name: "ResturantAmenities")
+  amenitiesList: [Amenity!]! @relation(name: "RestaurantAmenities")
 }
 
 type Story @model {
@@ -59,7 +58,7 @@ type Amenity @model {
   color: String!
   extraSymbol: String
 
-  restaurantId: Restaurant @relation(name: "ResturantAmenities")
+  restaurantId: Restaurant @relation(name: "RestaurantAmenities")
 }
 
 type ThumbsUp @model {
@@ -71,6 +70,7 @@ type ThumbsUp @model {
   atmosphere: Int!
 
   restaurantId: Restaurant @relation(name: "RestaurantThumbsUp")
+  reviewId: Review @relation(name: "ReviewThumbsUp")
 }
 
 type Review @model {
@@ -82,6 +82,7 @@ type Review @model {
   description: String!
 
   foodieId: Foodie @relation(name: "FoodieReview")
+  thumbsUpId: ThumbsUp @relation(name: "ReviewThumbsUp")
 }
 
 type Content @model {
@@ -90,6 +91,7 @@ type Content @model {
   title: String!
   text: String!
   position: Int!
+  image: [String!]!
 
   storyId: Story @relation(name: "StoryContent")
 }
