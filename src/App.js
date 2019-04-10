@@ -28,6 +28,7 @@ class App extends Component {
   }
 
   componentDidMount(){
+    console.log('updated');
     this.props.allStoriesQuery.refetch()
     .then((ret) => {
       this.setState({
@@ -62,10 +63,15 @@ const GET_STORIES = gql`
       imageUrl
       amenities
       categories
-      thumbsUpId{
+      thumbsUpId {
         food
         service
         atmosphere
+      }
+      amenitiesList {
+        name
+        color
+        extraSymbol
       }
      } 
   }
