@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import GoogleMap from './map/map';
+import React, { Component } from "react";
+import styled from "styled-components";
+import GoogleMap from "./map/map";
 
 const Wrapper = styled.div``;
 

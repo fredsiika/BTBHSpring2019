@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   height: 10px;
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 
 class SliderPage extends Component {
   state = {
-    value: '1'
+    value: "1"
   };
 
   setNewValue(value) {
@@ -64,12 +64,12 @@ class SliderPage extends Component {
           <MDBRow>
             <MDBCol
               onClick={() => {
-                this.setNewValue('0');
+                this.setNewValue("0");
               }}
               className={
-                this.state.value === '0'
-                  ? 'bold center text-red label'
-                  : 'center label'
+                this.state.value === "0"
+                  ? "bold center text-red label"
+                  : "center label"
               }
               size="4"
             >
@@ -77,12 +77,12 @@ class SliderPage extends Component {
             </MDBCol>
             <MDBCol
               onClick={() => {
-                this.setNewValue('1');
+                this.setNewValue("1");
               }}
               className={
-                this.state.value === '1'
-                  ? 'bold center text-red label'
-                  : 'center label'
+                this.state.value === "1"
+                  ? "bold center text-red label"
+                  : "center label"
               }
               size="4"
             >
@@ -90,12 +90,12 @@ class SliderPage extends Component {
             </MDBCol>
             <MDBCol
               onClick={() => {
-                this.setNewValue('2');
+                this.setNewValue("2");
               }}
               className={
-                this.state.value === '2'
-                  ? 'bold center text-red label'
-                  : 'center label'
+                this.state.value === "2"
+                  ? "bold center text-red label"
+                  : "center label"
               }
               size="4"
             >

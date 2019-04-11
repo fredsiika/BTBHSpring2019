@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { MDBIcon } from 'mdbreact';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import { MDBIcon } from "mdbreact";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   .amenity {
@@ -27,42 +27,42 @@ const Wrapper = styled.div`
 
 class Amenity extends Component {
   state = {
-    icon: '',
-    color: '',
+    icon: "",
+    color: "",
     plus: false
   };
 
   componentDidMount = () => {
     var icon, color, plus;
     switch (this.props.name) {
-      case 'vegetarian':
-        icon = 'leaf';
-        color = 'green';
+      case "vegetarian":
+        icon = "leaf";
+        color = "green";
         break;
 
-      case 'vegan':
-        icon = 'leaf';
+      case "vegan":
+        icon = "leaf";
         plus = true;
-        color = 'green';
+        color = "green";
         break;
 
-      case 'hiring':
-        icon = 'suitcase';
-        color = 'blue';
+      case "hiring":
+        icon = "suitcase";
+        color = "blue";
         break;
 
-      case 'keto':
-        icon = 'bacon';
-        color = 'brown';
+      case "keto":
+        icon = "bacon";
+        color = "brown";
         break;
 
-      case 'wifi':
-        icon = 'wifi';
-        color = 'blue';
+      case "wifi":
+        icon = "wifi";
+        color = "blue";
         break;
       default:
-        icon = '';
-        color = '';
+        icon = "";
+        color = "";
         break;
     }
     this.setState({
@@ -75,9 +75,9 @@ class Amenity extends Component {
   render() {
     return (
       <Wrapper>
-        <h5 className={'amenity ' + this.state.color}>
+        <h5 className={"amenity " + this.state.color}>
           <MDBIcon icon={this.state.icon} className="icon fa-xs">
-            {this.state.plus === true ? '+' : ''}
+            {this.state.plus === true ? "+" : ""}
           </MDBIcon>
         </h5>
       </Wrapper>

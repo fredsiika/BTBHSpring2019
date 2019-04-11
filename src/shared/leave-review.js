@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   MDBContainer,
   MDBRow,
@@ -6,9 +6,9 @@ import {
   MDBIcon,
   MDBInput,
   MDBBtn
-} from 'mdbreact';
+} from "mdbreact";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   margin-top: 20px;
@@ -45,7 +45,7 @@ class LeaveReview extends Component {
     food: false,
     atmos: false,
     service: false,
-    comment: ''
+    comment: ""
   };
 
   handleFood = () => {

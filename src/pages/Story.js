@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBIcon, MDBModal } from 'mdbreact';
-import styled from 'styled-components';
-import Carousel from '../shared/carousel';
-import Amenity from '../shared/amenity';
-import LeaveReview from '../shared/leave-review';
+import React, { Component } from "react";
+import { MDBContainer, MDBRow, MDBCol, MDBIcon, MDBModal } from "mdbreact";
+import styled from "styled-components";
+import Carousel from "../shared/carousel";
+import Amenity from "../shared/amenity";
+import LeaveReview from "../shared/leave-review";
 
-import { graphql, Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import { graphql, Query } from "react-apollo";
+import gql from "graphql-tag";
 
 const GET_STORY = gql`
   query GetRestaurantWithID($id: ID!) {
@@ -139,7 +139,7 @@ class StoryPage extends Component {
   };
 
   componentDidMount = () => {
-    var storyId = this.props.location.pathname.split('/')[2];
+    var storyId = this.props.location.pathname.split("/")[2];
     console.log(storyId);
     this.props.getStory.refetch({ id: storyId }).then(ret => {
       this.setState({
@@ -149,7 +149,7 @@ class StoryPage extends Component {
   };
 
   componentDidUpdate = () => {
-    console.log('story', this.state.story);
+    console.log("story", this.state.story);
   };
 
   render() {
@@ -177,9 +177,9 @@ class StoryPage extends Component {
                 <MDBCol size="12">{this.state.story.streetAddress}</MDBCol>
                 <MDBCol size="12">
                   {this.state.story.city +
-                    ', ' +
+                    ", " +
                     this.state.story.state +
-                    ' ' +
+                    " " +
                     this.state.story.zip}
                 </MDBCol>
                 <MDBCol size="12">{this.state.story.phone}</MDBCol>
@@ -340,9 +340,9 @@ class StoryPage extends Component {
 }
 
 const StoryPageWithQuery = graphql(GET_STORY, {
-  name: 'getStory',
+  name: "getStory",
   options: {
-    fetchPolicy: 'network-only'
+    fetchPolicy: "network-only"
   }
 })(StoryPage);
 export default StoryPageWithQuery;

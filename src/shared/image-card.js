@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { MDBIcon } from 'mdbreact';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import { MDBIcon } from "mdbreact";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   .main-image {
-    height: ${props => props.height || '100px'};
+    height: ${props => props.height || "100px"};
     width: 100%;
     object-fit: cover;
   }
@@ -57,7 +57,7 @@ class ImageCard extends Component {
   render() {
     return (
       <Wrapper {...this.props}>
-        <Link to={'/story/' + this.props.id}>
+        <Link to={"/story/" + this.props.id}>
           <img
             src={this.props.url}
             className="main-image rounded float-left"

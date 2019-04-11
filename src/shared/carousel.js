@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import Flickity from 'react-flickity-component';
-import { MDBContainer, MDBRow } from 'mdbreact';
+import React, { Component } from "react";
+import styled from "styled-components";
+import Flickity from "react-flickity-component";
+import { MDBContainer, MDBRow } from "mdbreact";
 
 const flickityOptions = {
   initialIndex: 1
@@ -59,7 +59,7 @@ const Wrapper = styled.div`
 class Carousel extends Component {
   flickityOptions = {
     initialIndex: 8,
-    cellSelector: '.sliderBoxes',
+    cellSelector: ".sliderBoxes",
     wrapAround: true,
     disableImagesLoaded: true,
     freeScroll: false,
@@ -74,8 +74,8 @@ class Carousel extends Component {
         <MDBContainer>
           <MDBRow>
             <Flickity
-              className={'carousel'} // default ''
-              elementType={'div'} // default 'div'
+              className={"carousel"} // default ''
+              elementType={"div"} // default 'div'
               options={flickityOptions} // takes flickity options {}
               disableImagesLoaded={false} // default false
               reloadOnUpdate // default false

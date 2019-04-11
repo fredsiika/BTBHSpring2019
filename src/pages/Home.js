@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import React, { Component } from "react";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 // import { withRouter } from "react-router-dom";
-import styled from 'styled-components';
-import Video from '../shared/video';
-import ImageCard from '../shared/image-card';
+import styled from "styled-components";
+import Video from "../shared/video";
+import ImageCard from "../shared/image-card";
 
 // import { graphql } from "react-apollo";
 // import gql from "graphql-tag";
@@ -31,8 +31,8 @@ const Wrapper = styled.div`
 
 class HomePage extends Component {
   state = {
-    title: 'test',
-    subtitle: 'test'
+    title: "test",
+    subtitle: "test"
   };
 
   render() {

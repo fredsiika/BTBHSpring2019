@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
-import Geocode from 'react-geocode';
-import styled from 'styled-components';
-import { MDBIcon } from 'mdbreact';
+import React, { Component } from "react";
+import GoogleMapReact from "google-map-react";
+import Geocode from "react-geocode";
+import styled from "styled-components";
+import { MDBIcon } from "mdbreact";
 
 const Wrapper = styled.div`
   height: calc((${props => props.height}));
@@ -23,11 +23,11 @@ setPins = restaurants => {
   const pins = restaurants.map((key, restaurants) => {
     const pos = Geocode.fromAddress(
       restaurants.streetAddress +
-        ', ' +
+        ", " +
         restaurants.city +
-        ', ' +
+        ", " +
         restaurants.state +
-        ' ' +
+        " " +
         restaurants.zip
     ).then(
       response => {
@@ -58,7 +58,7 @@ class GoogleMap extends Component {
     return (
       <Wrapper {...this.props}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyDiDLXMnE76vMVZ-xfbMFaWriBS_gs4lQY' }}
+          bootstrapURLKeys={{ key: "AIzaSyDiDLXMnE76vMVZ-xfbMFaWriBS_gs4lQY" }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           yesIWantToUseGoogleMapApiInternals

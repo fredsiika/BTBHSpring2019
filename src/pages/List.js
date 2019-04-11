@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-import ImageCard from '../shared/image-card';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from "react";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import ImageCard from "../shared/image-card";
+import { withRouter } from "react-router-dom";
 
-import styled from 'styled-components';
-import Amenity from '../shared/amenity';
+import styled from "styled-components";
+import Amenity from "../shared/amenity";
 
 const Wrapper = styled.div`
   .test {

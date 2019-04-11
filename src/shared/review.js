@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { MDBRow, MDBCol, MDBIcon } from 'mdbreact';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   padding-bottom: 20px;

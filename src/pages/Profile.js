@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
-import styled from 'styled-components';
-import Review from '../shared/review';
+import React, { Component } from "react";
+import { MDBContainer, MDBRow, MDBCol, MDBIcon } from "mdbreact";
+import styled from "styled-components";
+import Review from "../shared/review";
 
 const Wrapper = styled.div`
   margin-top: 60px;

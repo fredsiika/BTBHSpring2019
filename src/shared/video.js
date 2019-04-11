@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Video = () => {
   return (
@@ -11,7 +11,7 @@ const Video = () => {
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-      />{' '}
+      />{" "}
     </div>
   );
 };

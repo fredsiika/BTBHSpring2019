@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
-import styled from 'styled-components';
-import SliderPage from '../shared/slider';
+import React, { Component } from "react";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import styled from "styled-components";
+import SliderPage from "../shared/slider";
 
 const Wrapper = styled.div`
   padding-bottom: 30px;
@@ -66,33 +66,33 @@ class FilterPage extends Component {
   };
 
   availableCategories = [
-    'American',
-    'Barbeque',
-    'Chinese',
-    'French',
-    'Hamburger',
-    'Indian',
-    'Italian',
-    'Japanese',
-    'Mexican',
-    'Pizza',
-    'Seafood',
-    'Steak',
-    'Sushi',
-    'Thai',
-    'Korean',
-    'Coffee',
-    'Bakery',
-    'Island',
-    'Bar & Tapas',
-    'Vegan',
-    'Vegetarian',
-    'Paleo',
-    'Keto',
-    'Gluten Free',
-    'Halal',
-    'Kosher',
-    'Market'
+    "American",
+    "Barbeque",
+    "Chinese",
+    "French",
+    "Hamburger",
+    "Indian",
+    "Italian",
+    "Japanese",
+    "Mexican",
+    "Pizza",
+    "Seafood",
+    "Steak",
+    "Sushi",
+    "Thai",
+    "Korean",
+    "Coffee",
+    "Bakery",
+    "Island",
+    "Bar & Tapas",
+    "Vegan",
+    "Vegetarian",
+    "Paleo",
+    "Keto",
+    "Gluten Free",
+    "Halal",
+    "Kosher",
+    "Market"
   ];
 
   addCat = cat => {
@@ -154,8 +154,8 @@ class FilterPage extends Component {
                       key={index}
                       className={
                         this.state.activeCategories.includes(category)
-                          ? 'category-on category'
-                          : 'category-off category'
+                          ? "category-on category"
+                          : "category-off category"
                       }
                       onClick={() => {
                         this.handleCategory(category);

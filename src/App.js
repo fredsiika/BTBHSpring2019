@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Navbar from './shared/navbar';
-import ListPage from './pages/List';
-import MapPage from './pages/Map';
-import HomePage from './pages/Home';
-import StoryPage from './pages/Story';
-import ProfilePage from './pages/Profile';
+import Navbar from "./shared/navbar";
+import ListPage from "./pages/List";
+import MapPage from "./pages/Map";
+import HomePage from "./pages/Home";
+import StoryPage from "./pages/Story";
+import ProfilePage from "./pages/Profile";
 
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
-import LeaveReview from './shared/leave-review';
+import { graphql } from "react-apollo";
+import gql from "graphql-tag";
+import LeaveReview from "./shared/leave-review";
 
 class App extends Component {
   state = {
@@ -106,9 +106,9 @@ const Wrapper = styled.div`
 `;
 
 const AppPageWithQuery = graphql(GET_STORIES, {
-  name: 'allStoriesQuery',
+  name: "allStoriesQuery",
   options: {
-    fetchPolicy: 'network-only'
+    fetchPolicy: "network-only"
   }
 })(App);
 export default AppPageWithQuery;

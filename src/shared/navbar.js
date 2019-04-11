@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   MDBContainer,
   MDBNavbar,
@@ -8,10 +8,10 @@ import {
   MDBCollapse,
   MDBIcon,
   MDBModal
-} from 'mdbreact';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import FilterPage from '../pages/Filter';
+} from "mdbreact";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import FilterPage from "../pages/Filter";
 
 const Wrapper = styled.div`
   .navbar-button {
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   }
 
   .title {
-    font-family: 'Lobster Two', cursive;
+    font-family: "Lobster Two", cursive;
     font-size: 20px;
     letter-spacing: px;
   }
@@ -58,7 +58,7 @@ class Navbar extends Component {
   };
 
   handleClose = () => {
-    console.log('handleClose ran');
+    console.log("handleClose ran");
     this.setState({
       filterIsOpen: false
     });
