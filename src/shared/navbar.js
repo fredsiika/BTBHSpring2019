@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   MDBContainer,
   MDBNavbar,
@@ -8,10 +8,10 @@ import {
   MDBCollapse,
   MDBIcon,
   MDBModal
-} from "mdbreact";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import FilterPage from "../pages/Filter";
+} from 'mdbreact';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import FilterPage from '../pages/Filter';
 
 const Wrapper = styled.div`
   .navbar-button {
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   }
 
   .title {
-    font-family: "Lobster Two", cursive;
+    font-family: 'Lobster Two', cursive;
     font-size: 20px;
     letter-spacing: px;
   }
@@ -58,11 +58,11 @@ class Navbar extends Component {
   };
 
   handleClose = () => {
-    console.log("handleClose ran");
+    console.log('handleClose ran');
     this.setState({
       filterIsOpen: false
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -77,22 +77,25 @@ class Navbar extends Component {
                     <MDBIcon icon="map" />
                   </Link>
                 </MDBNavItem>
-                <MDBNavItem className="mt-1" >
+                <MDBNavItem className="mt-1">
                   <Link className="navbar-button button" to="/list">
                     <MDBIcon icon="bars" />
                   </Link>
                 </MDBNavItem>
-                <MDBNavItem className="" >
+                <MDBNavItem className="">
                   <Link className="navbar-button button title" to="/">
                     Localateur
                   </Link>
                 </MDBNavItem>
-                <MDBNavItem className="mt-1" >
-                  <div className="navbar-button button" onClick={this.handleFilter}>
+                <MDBNavItem className="mt-1">
+                  <div
+                    className="navbar-button button"
+                    onClick={this.handleFilter}
+                  >
                     <MDBIcon icon="filter" />
                   </div>
                 </MDBNavItem>
-                <MDBNavItem className="mt-1"> 
+                <MDBNavItem className="mt-1">
                   <Link className="navbar-button button" to="/profile">
                     <MDBIcon icon="user-circle" />
                   </Link>
@@ -101,14 +104,12 @@ class Navbar extends Component {
             </MDBCollapse>
           </MDBContainer>
         </MDBNavbar>
-        <MDBModal 
-        centered 
-        isOpen={this.state.filterIsOpen}
-        toggle={this.handleClose}
+        <MDBModal
+          centered
+          isOpen={this.state.filterIsOpen}
+          toggle={this.handleClose}
         >
-          <FilterPage 
-          closeFilter={this.handleClose}
-          />
+          <FilterPage closeFilter={this.handleClose} />
         </MDBModal>
       </Wrapper>
     );

@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol} from "mdbreact";
-import ImageCard from "../shared/image-card";
-import { withRouter } from 'react-router-dom'
+import React, { Component } from 'react';
+import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import ImageCard from '../shared/image-card';
+import { withRouter } from 'react-router-dom';
 
-import styled from "styled-components";
-import Amenity from "../shared/amenity";
+import styled from 'styled-components';
+import Amenity from '../shared/amenity';
 
 const Wrapper = styled.div`
   .test {
@@ -126,7 +126,6 @@ const Wrapper = styled.div`
 `;
 
 class ListView extends Component {
-
   render() {
     return (
       <Wrapper>
@@ -135,7 +134,7 @@ class ListView extends Component {
             return (
               <div key={index}>
                 <MDBRow className="card-container">
-                  <MDBCol className="test" xs='6' sm="4">
+                  <MDBCol className="test" xs="6" sm="4">
                     <ImageCard
                       url={restaurant.imageUrl}
                       thumbs={
@@ -147,7 +146,7 @@ class ListView extends Component {
                       id={restaurant.id}
                     />
                   </MDBCol>
-                  <MDBCol className="test" xs='6' sm="8">
+                  <MDBCol className="test" xs="6" sm="8">
                     <MDBRow>
                       <MDBCol className="test category-container" size="12">
                         {restaurant.categories.map((amenity, index) => {

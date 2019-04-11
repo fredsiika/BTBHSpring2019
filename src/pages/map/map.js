@@ -4,25 +4,32 @@ import Geocode from 'react-geocode';
 import styled from 'styled-components';
 import { MDBIcon } from 'mdbreact';
 
-
 const Wrapper = styled.div`
-    height: calc((${props => props.height}));
-    width: ${props => props.width};
+  height: calc((${props => props.height}));
+  width: ${props => props.width};
 
-    .pin-container {
-      height: 20px;
-      width: 15px;
-      font-size: 15px;
-      margin-top: -20px;
-    }
+  .pin-container {
+    height: 20px;
+    width: 15px;
+    font-size: 15px;
+    margin-top: -20px;
+  }
 
-    .pin {
-      color: red;
-    }
+  .pin {
+    color: red;
+  }
 `;
-setPins = (restaurants) => {
+setPins = restaurants => {
   const pins = restaurants.map((key, restaurants) => {
-    const pos = Geocode.fromAddress(restaurants.streetAddress + ', ' + restaurants.city + ', ' + restaurants.state + ' ' + restaurants.zip).then(
+    const pos = Geocode.fromAddress(
+      restaurants.streetAddress +
+        ', ' +
+        restaurants.city +
+        ', ' +
+        restaurants.state +
+        ' ' +
+        restaurants.zip
+    ).then(
       response => {
         const { lat, lng } = response.results[0].geometry.location;
         console.log(lat, lng);
@@ -30,12 +37,9 @@ setPins = (restaurants) => {
       <div key={key} className="pin-container" lat={pos.lat} lng={pos.lng}>
         <MDBIcon icon="map-pin" className="pin" />
       </div>
-    )
-  }
-  );
-  return (
-    pins
-  )
+    );
+  });
+  return pins;
 };
 class GoogleMap extends Component {
   static defaultProps = {
@@ -46,17 +50,14 @@ class GoogleMap extends Component {
     zoom: 11
   };
 
-
-
   componentDidMount = () => {
     console.log(this.props.restaurants);
   };
 
-
   render() {
     return (
       <Wrapper {...this.props}>
-      <GoogleMapReact
+        <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyDiDLXMnE76vMVZ-xfbMFaWriBS_gs4lQY' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
@@ -65,7 +66,6 @@ class GoogleMap extends Component {
           {setPins(this.props.restaurants)}
         </GoogleMapReact>
       </Wrapper>
-
     );
   }
 }

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import React, { Component } from 'react';
+import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 // import { withRouter } from "react-router-dom";
-import styled from "styled-components";
-import Video from "../shared/video";
-import ImageCard from "../shared/image-card";
+import styled from 'styled-components';
+import Video from '../shared/video';
+import ImageCard from '../shared/image-card';
 
 // import { graphql } from "react-apollo";
 // import gql from "graphql-tag";
@@ -31,8 +31,8 @@ const Wrapper = styled.div`
 
 class HomePage extends Component {
   state = {
-    title: "test",
-    subtitle: "test"
+    title: 'test',
+    subtitle: 'test'
   };
 
   render() {
@@ -47,13 +47,20 @@ class HomePage extends Component {
           <MDBRow>
             {this.props.restaurants.map((restaurant, index) => {
               return (
-                <MDBCol key={index} className="test" size="6" sm="6" md="6" lg="4">
+                <MDBCol
+                  key={index}
+                  className="test"
+                  size="6"
+                  sm="6"
+                  md="6"
+                  lg="4"
+                >
                   <ImageCard
                     url={restaurant.imageUrl}
                     thumbs={
                       restaurant.thumbsUpId.food +
-                      restaurant.thumbsUpId.service +
-                      restaurant.thumbsUpId.atmosphere || 0
+                        restaurant.thumbsUpId.service +
+                        restaurant.thumbsUpId.atmosphere || 0
                     }
                     name={restaurant.name}
                     id={restaurant.id}

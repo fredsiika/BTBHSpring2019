@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
-import styled from "styled-components";
-import SliderPage from "../shared/slider";
+import React, { Component } from 'react';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
+import styled from 'styled-components';
+import SliderPage from '../shared/slider';
 
 const Wrapper = styled.div`
   padding-bottom: 30px;
@@ -66,47 +66,46 @@ class FilterPage extends Component {
   };
 
   availableCategories = [
-    "American",
-    "Barbeque",
-    "Chinese",
-    "French",
-    "Hamburger",
-    "Indian",
-    "Italian",
-    "Japanese",
-    "Mexican",
-    "Pizza",
-    "Seafood",
-    "Steak",
-    "Sushi",
-    "Thai",
-    "Korean",
-    "Coffee",
-    "Bakery",
-    "Island",
-    "Bar & Tapas",
-    "Vegan",
-    "Vegetarian",
-    "Paleo",
-    "Keto",
-    "Gluten Free",
-    "Halal",
-    "Kosher",
-    "Market"
+    'American',
+    'Barbeque',
+    'Chinese',
+    'French',
+    'Hamburger',
+    'Indian',
+    'Italian',
+    'Japanese',
+    'Mexican',
+    'Pizza',
+    'Seafood',
+    'Steak',
+    'Sushi',
+    'Thai',
+    'Korean',
+    'Coffee',
+    'Bakery',
+    'Island',
+    'Bar & Tapas',
+    'Vegan',
+    'Vegetarian',
+    'Paleo',
+    'Keto',
+    'Gluten Free',
+    'Halal',
+    'Kosher',
+    'Market'
   ];
 
-  addCat = (cat) => {
+  addCat = cat => {
     // var newList = this,.state
-  }
+  };
 
-  handleActiveCategoryUpdate = (cat) => {
-    this.state.activeCategories.includes(cat) ?
-      this.addCat(cat) 
-      :
-      this.removeCat(cat);
-  }
+  handleActiveCategoryUpdate = cat => {
+    this.state.activeCategories.includes(cat)
+      ? this.addCat(cat)
+      : this.removeCat(cat);
+  };
 
-  handleCategory = (category) => {
+  handleCategory = category => {
     if (this.state.activeCategories.includes(category)) {
       var newList = this.state.activeCategories;
       for (var i = 0; i < newList.length; i++) {
@@ -127,7 +126,7 @@ class FilterPage extends Component {
     }
   };
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     // console.log("Filter: ", JSON.parse(JSON.stringify(this.availableCategories)));
   }
 
@@ -147,35 +146,39 @@ class FilterPage extends Component {
             </MDBCol>
           </MDBRow>
           <MDBContainer>
-          <MDBRow>
-          <MDBCol size="12" className="mt-5">
-            {this.availableCategories.map((category, index) => {
-              return (
-                <span
-                  key={index}
-                  className={
-                    this.state.activeCategories.includes(category)
-                      ? "category-on category"
-                      : "category-off category"
-                  }
-                  onClick={() => {
-                    this.handleCategory(category);
-                  }}
-                >
-                  {category}
-                </span>
-              );
-            })}
-          </MDBCol>
-        </MDBRow>
-          </MDBContainer>
-          
-          <MDBRow>
-              <MDBCol size="9" className="offset-1">
-                <MDBBtn className="btn btn-block done" color="primary" onClick={this.props.closeFilter}>
-                  DONE
-                </MDBBtn>
+            <MDBRow>
+              <MDBCol size="12" className="mt-5">
+                {this.availableCategories.map((category, index) => {
+                  return (
+                    <span
+                      key={index}
+                      className={
+                        this.state.activeCategories.includes(category)
+                          ? 'category-on category'
+                          : 'category-off category'
+                      }
+                      onClick={() => {
+                        this.handleCategory(category);
+                      }}
+                    >
+                      {category}
+                    </span>
+                  );
+                })}
               </MDBCol>
+            </MDBRow>
+          </MDBContainer>
+
+          <MDBRow>
+            <MDBCol size="9" className="offset-1">
+              <MDBBtn
+                className="btn btn-block done"
+                color="primary"
+                onClick={this.props.closeFilter}
+              >
+                DONE
+              </MDBBtn>
+            </MDBCol>
           </MDBRow>
         </MDBContainer>
       </Wrapper>

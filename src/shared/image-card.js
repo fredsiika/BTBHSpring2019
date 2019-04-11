@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { MDBIcon } from "mdbreact";
+import { MDBIcon } from 'mdbreact';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
   .main-image {
-    height: ${props => props.height || "100px"};
+    height: ${props => props.height || '100px'};
     width: 100%;
     object-fit: cover;
   }
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     cursor: pointer;
   }
 
-  .thumbs-container{
+  .thumbs-container {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -53,28 +53,27 @@ const Wrapper = styled.div`
   }
 `;
 
-class ImageCard extends Component{
-
-    render() {
-        return (
-            <Wrapper {...this.props}>
-            <Link to={"/story/" + this.props.id}>
-            <img
-                src={this.props.url}
-                className="main-image rounded float-left"
-                alt="aligment"
-              />
-              <div className="thumbs-container red">
-                <span className="thumbs-count">{this.props.thumbs}</span>
-                <span className="thumbs-up">
-                  <MDBIcon icon="thumbs-up" />
-                </span>
-              </div>
-              <h3 className="restaurant-title">{this.props.name}</h3>
-            </Link>
-            </Wrapper>
-        );
-    }
+class ImageCard extends Component {
+  render() {
+    return (
+      <Wrapper {...this.props}>
+        <Link to={'/story/' + this.props.id}>
+          <img
+            src={this.props.url}
+            className="main-image rounded float-left"
+            alt="aligment"
+          />
+          <div className="thumbs-container red">
+            <span className="thumbs-count">{this.props.thumbs}</span>
+            <span className="thumbs-up">
+              <MDBIcon icon="thumbs-up" />
+            </span>
+          </div>
+          <h3 className="restaurant-title">{this.props.name}</h3>
+        </Link>
+      </Wrapper>
+    );
+  }
 }
 
 export default ImageCard;

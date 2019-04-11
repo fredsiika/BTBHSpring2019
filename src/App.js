@@ -1,63 +1,85 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import Navbar from './shared/navbar'
+import Navbar from './shared/navbar';
 import ListPage from './pages/List';
 import MapPage from './pages/Map';
 import HomePage from './pages/Home';
 import StoryPage from './pages/Story';
-import ProfilePage from './pages/Profile'
+import ProfilePage from './pages/Profile';
 
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import LeaveReview from './shared/leave-review';
 
 class App extends Component {
-
   state = {
     categoryFilters: [],
     allRestaurants: []
-  }
+  };
 
-  handleCategories = (newArr) => {    
+  handleCategories = newArr => {
     this.setState({
       categoryFilters: newArr
-    })
-  }
+    });
+  };
 
-  componentDidMount(){
-    this.props.allStoriesQuery.refetch()
-    .then((ret) => {
+  componentDidMount() {
+    this.props.allStoriesQuery.refetch().then(ret => {
       this.setState({
         allRestaurants: ret.data.allRestaurants
-      })
+      });
     });
   }
 
   render() {
     return (
-        <Wrapper>
-            <Router>
-              <Navbar/>
-              <Switch>
-                <Route exact path="/" component={() => <HomePage restaurants={this.state.allRestaurants}/>}/>
-                <Route exact path="/list" component={() => <ListPage restaurants={this.state.allRestaurants}/>}/>
-                <Route exact path="/map" component={() => <MapPage restaurants={this.state.allRestaurants}/>}/>
-                <Route exact path="/story/:id" component={StoryPage} />
-                <Route exact path="/profile" component={() => <ProfilePage restaurants={this.state.allRestaurants}/>}/>
-                <Route exact path="/review" component={LeaveReview} />
-              </Switch>
-          </Router>
-        </Wrapper>
+      <Wrapper>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={() => (
+                <HomePage restaurants={this.state.allRestaurants} />
+              )}
+            />
+            <Route
+              exact
+              path="/list"
+              component={() => (
+                <ListPage restaurants={this.state.allRestaurants} />
+              )}
+            />
+            <Route
+              exact
+              path="/map"
+              component={() => (
+                <MapPage restaurants={this.state.allRestaurants} />
+              )}
+            />
+            <Route exact path="/story/:id" component={StoryPage} />
+            <Route
+              exact
+              path="/profile"
+              component={() => (
+                <ProfilePage restaurants={this.state.allRestaurants} />
+              )}
+            />
+            <Route exact path="/review" component={LeaveReview} />
+          </Switch>
+        </Router>
+      </Wrapper>
     );
   }
 }
 
 const GET_STORIES = gql`
   query {
-     allRestaurants{
+    allRestaurants {
       id
       name
       imageUrl
@@ -73,7 +95,7 @@ const GET_STORIES = gql`
         color
         extraSymbol
       }
-     } 
+    }
   }
 `;
 
@@ -86,7 +108,7 @@ const Wrapper = styled.div`
 const AppPageWithQuery = graphql(GET_STORIES, {
   name: 'allStoriesQuery',
   options: {
-    fetchPolicy: 'network-only',
-  },
-})(App)
+    fetchPolicy: 'network-only'
+  }
+})(App);
 export default AppPageWithQuery;
