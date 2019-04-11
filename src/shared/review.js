@@ -12,6 +12,7 @@ padding-bottom: 20px;
   .container{
       margin-bottom: 20px;
     }
+    
   .icon-red{
     margin-left: 10px;
     color: red;
