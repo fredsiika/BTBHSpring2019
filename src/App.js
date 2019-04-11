@@ -28,7 +28,6 @@ class App extends Component {
   }
 
   componentDidMount(){
-    console.log('updated');
     this.props.allStoriesQuery.refetch()
     .then((ret) => {
       this.setState({

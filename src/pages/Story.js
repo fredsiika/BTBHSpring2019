@@ -2,9 +2,31 @@ import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBIcon, MDBModal } from "mdbreact";
 import styled from "styled-components";
 import Carousel from "../shared/carousel";
-import ImageCard from "../shared/image-card";
 import Amenity from "../shared/amenity";
 import LeaveReview from '../shared/leave-review';
+
+import { graphql, Query } from 'react-apollo';
+import gql from 'graphql-tag';
+
+const GET_STORY = gql`
+  query GetRestaurantWithID($id: ID!){
+    Restaurant(id: $id){
+      id
+      name
+      streetAddress
+      categories
+      city
+      state
+      zip
+      imageUrl
+      phone
+      storyId {
+        id
+        description
+      }
+    }
+}
+`;
 
 const Wrapper = styled.div`
   margin-top: 60px;
@@ -101,7 +123,8 @@ const Wrapper = styled.div`
 class StoryPage extends Component {
 
   state = {
-    LeaveReview: false
+    LeaveReview: false,
+    story: {}
   }
 
   handleLeaveReview = () => {
@@ -116,22 +139,39 @@ class StoryPage extends Component {
     });
   }
 
+  componentDidMount = () => {
+    var storyId = this.props.location.pathname.split("/")[2];
+    console.log(storyId);
+    this.props.getStory.refetch({id: storyId})
+    .then((ret) => {
+      this.setState({
+        story: ret.data.Restaurant
+      })
+    })
+  }
+
+  componentDidUpdate = () => {
+    console.log("story", this.state.story);
+  }
+
+
 
   render() {
+
     return (
       <Wrapper>
         <MDBContainer>
           <MDBRow className="story-header">
             <MDBCol size="5" sm="5">
-              <img className="story-image" src="http://www.arabnews.com/sites/default/files/styles/n_670_395/public/2017/09/23/999216-213334383.jpg?itok=ofqNCPqO"  />
+              <img className="story-image" alt="test" src={this.state.story.imageUrl}  />
             </MDBCol>
             <MDBCol size="7" sm="7">
               <MDBRow>
-                <MDBCol size="12" className="story-restaurant-name">Joe's Bar & Grill</MDBCol>
-                <MDBCol size="12" ><h5 className="story-category red">Bar & Tapas</h5></MDBCol>
-                <MDBCol size="12">1234 This Address</MDBCol>
-                <MDBCol size="12">Newark, CA 12345</MDBCol>
-                <MDBCol size="12">1 (123) 123-4567</MDBCol>
+                <MDBCol size="12" className="story-restaurant-name">{this.state.story.name}</MDBCol>
+                <MDBCol size="12" ><h5 className="story-category red">{this.state.story.categories}</h5></MDBCol>
+                <MDBCol size="12">{this.state.story.streetAddress}</MDBCol>
+                <MDBCol size="12">{this.state.story.city + ", " + this.state.story.state + " " + this.state.story.zip }</MDBCol>
+                <MDBCol size="12">{this.state.story.phone}</MDBCol>
                 <div className="story-menu-container">
                 <h5 className="story-menu">
                   MENU
@@ -166,7 +206,7 @@ class StoryPage extends Component {
             <MDBCol>
               <MDBRow className="question-container">
                 <MDBCol size="4">
-                  <img className="question-image" src="https://www.nbnco.com.au/content/dam/nbnco2/images/blog/new/sme-bar-owner-03-1043.jpg.transform/w1440/optimized/image.jpg" />
+                  <img className="question-image" alt="test" src="https://www.nbnco.com.au/content/dam/nbnco2/images/blog/new/sme-bar-owner-03-1043.jpg.transform/w1440/optimized/image.jpg" />
                 </MDBCol>
                 <MDBCol size="8">
                   <MDBRow>
@@ -205,12 +245,12 @@ class StoryPage extends Component {
                 </MDBRow>
                 </MDBCol>
                 <MDBCol size="4">
-                  <img className="question-image" src="http://laurencariscooks.com/1_lcc/wp-content/uploads/2016/03/Lightened-Up-Patatas-Bravas-3-640x960.jpg" />
+                  <img className="question-image" alt="test" src="http://laurencariscooks.com/1_lcc/wp-content/uploads/2016/03/Lightened-Up-Patatas-Bravas-3-640x960.jpg" />
                 </MDBCol>
               </MDBRow>
               <MDBRow className="question-container">
               <MDBCol size="4">
-                <img className="question-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8GlIU1JI_8RQKjIwcSoHGls9QS9zTepM5m2GSGikiY5Bvh72G" />
+                <img className="question-image" alt="test" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8GlIU1JI_8RQKjIwcSoHGls9QS9zTepM5m2GSGikiY5Bvh72G" />
               </MDBCol>
               <MDBCol size="8">
                 <MDBRow>
@@ -247,7 +287,7 @@ class StoryPage extends Component {
                 </MDBRow>
                 </MDBCol>
                 <MDBCol size="4">
-                  <img className="question-image" src="https://assets.entrepreneur.com/content/3x2/2000/20150609182102-raising-the-bar.jpeg?width=700&crop=2:1" />
+                  <img className="question-image" alt="test" src="https://assets.entrepreneur.com/content/3x2/2000/20150609182102-raising-the-bar.jpeg?width=700&crop=2:1" />
                 </MDBCol>
               </MDBRow>
             </MDBCol>
@@ -271,5 +311,12 @@ class StoryPage extends Component {
   }
 }
 
-export default StoryPage;
+
+const StoryPageWithQuery = graphql(GET_STORY, {
+  name: "getStory",
+  options: {
+    fetchPolicy: 'network-only',
+  },
+})(StoryPage)
+export default StoryPageWithQuery;
  
