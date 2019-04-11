@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 import Video from "../shared/video";
 import ImageCard from "../shared/image-card";
 
-import { graphql } from "react-apollo";
-import gql from "graphql-tag";
+// import { graphql } from "react-apollo";
+// import gql from "graphql-tag";
 
 // const CREATE_STORY_MUTATION = gql`
 //   mutation CreateStoryMutation($title: String!, $subtitle: String!) {
@@ -56,6 +56,7 @@ class HomePage extends Component {
                       restaurant.thumbsUpId.atmosphere || 0
                     }
                     name={restaurant.name}
+                    id={restaurant.id}
                   />
                 </MDBCol>
               );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MDBIcon } from "mdbreact";
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -57,6 +58,7 @@ class ImageCard extends Component{
     render() {
         return (
             <Wrapper {...this.props}>
+            <Link to={"/story/" + this.props.id}>
             <img
                 src={this.props.url}
                 className="main-image rounded float-left"
@@ -69,6 +71,7 @@ class ImageCard extends Component{
                 </span>
               </div>
               <h3 className="restaurant-title">{this.props.name}</h3>
+            </Link>
             </Wrapper>
         );
     }

@@ -144,6 +144,7 @@ class ListView extends Component {
                         restaurant.thumbsUpId.atmosphere
                       }
                       name={restaurant.name}
+                      id={restaurant.id}
                     />
                   </MDBCol>
                   <MDBCol className="test" xs='6' sm="8">

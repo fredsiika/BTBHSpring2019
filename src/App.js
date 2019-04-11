@@ -28,7 +28,6 @@ class App extends Component {
   }
 
   componentDidMount(){
-    console.log('updated');
     this.props.allStoriesQuery.refetch()
     .then((ret) => {
       this.setState({
@@ -59,6 +58,7 @@ class App extends Component {
 const GET_STORIES = gql`
   query {
      allRestaurants{
+      id
       name
       imageUrl
       amenities

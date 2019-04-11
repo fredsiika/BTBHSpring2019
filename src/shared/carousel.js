@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Flickity from "react-flickity-component";
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { MDBContainer, MDBRow } from "mdbreact";
 
 const flickityOptions = {
   initialIndex: 1
