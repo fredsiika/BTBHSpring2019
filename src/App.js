@@ -58,6 +58,7 @@ class App extends Component {
 const GET_STORIES = gql`
   query {
      allRestaurants{
+      id
       name
       imageUrl
       amenities

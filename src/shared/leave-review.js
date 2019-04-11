@@ -58,10 +58,6 @@ class LeaveReview extends Component{
         })
     }
 
-    handleDone = () => {
-        this.props.handleDone();
-    }
-
     render() {
         return (
              <Wrapper>
@@ -123,7 +119,7 @@ class LeaveReview extends Component{
                     </MDBRow>
                     <MDBRow>
                         <MDBCol size="9" className="offset-1">
-                            <MDBBtn className="btn btn-block center" color="primary" onClick={this.handleDone}>DONE</MDBBtn>
+                            <MDBBtn className="btn btn-block center" color="primary" onClick={this.props.handleDone}>DONE</MDBBtn>
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>

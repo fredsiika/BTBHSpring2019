@@ -56,6 +56,7 @@ class HomePage extends Component {
                       restaurant.thumbsUpId.atmosphere || 0
                     }
                     name={restaurant.name}
+                    id={restaurant.id}
                   />
                 </MDBCol>
               );

@@ -88,7 +88,7 @@ class Navbar extends Component {
                   </Link>
                 </MDBNavItem>
                 <MDBNavItem className="mt-1" >
-                  <Link className="navbar-button button" to="/story/12" >
+                  <Link className="navbar-button button" onClick={this.handleFilter}>
                     <MDBIcon icon="filter" />
                   </Link>
                 </MDBNavItem>
@@ -101,8 +101,14 @@ class Navbar extends Component {
             </MDBCollapse>
           </MDBContainer>
         </MDBNavbar>
-        <MDBModal centered isOpen={this.state.filterIsOpen}>
-          <FilterPage closeFilter={this.handleClose}/>
+        <MDBModal 
+        centered 
+        isOpen={this.state.filterIsOpen}
+        toggle={this.handleClose}
+        >
+          <FilterPage 
+          closeFilter={this.handleClose}
+          />
         </MDBModal>
       </Wrapper>
     );

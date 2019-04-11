@@ -110,7 +110,7 @@ class StoryPage extends Component {
     });
   }
 
-  handleDoneButton = () => {
+  handleDone = () => {
     this.setState({
       leaveReview: false
     });
@@ -257,8 +257,13 @@ class StoryPage extends Component {
               Reviews
             </MDBCol>
           </MDBRow>
-          <MDBModal isOpen={this.state.leaveReview} handleDone={this.handleDoneButton}>
-            <LeaveReview />
+          <MDBModal 
+          isOpen={this.state.leaveReview}
+          toggle={this.handleDone}
+           >
+            <LeaveReview 
+            handleDone={this.handleDone}
+            />
           </MDBModal>
         </MDBContainer>
       </Wrapper>

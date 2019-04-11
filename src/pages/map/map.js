@@ -39,8 +39,6 @@ class GoogleMap extends Component {
     zoom: 11
   };
 
-  
-
   render() {
     return (
         <Wrapper {...this.props}>
