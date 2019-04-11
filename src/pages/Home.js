@@ -8,15 +8,15 @@ import ImageCard from "../shared/image-card";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 
-const CREATE_STORY_MUTATION = gql`
-  mutation CreateStoryMutation($title: String!, $subtitle: String!) {
-    createStory(title: $title, subtitle: $subtitle) {
-      title
-      subtitle
-      id
-    }
-  }
-`;
+// const CREATE_STORY_MUTATION = gql`
+//   mutation CreateStoryMutation($title: String!, $subtitle: String!) {
+//     createStory(title: $title, subtitle: $subtitle) {
+//       title
+//       subtitle
+//       id
+//     }
+//   }
+// `;
 
 const Wrapper = styled.div`
   margin-top: 60px;
@@ -68,7 +68,7 @@ class HomePage extends Component {
   }
 }
 
-const CreatePageWithMutation = graphql(CREATE_STORY_MUTATION, {
-  name: "createStoryMutation"
-})(HomePage);
-export default withRouter(CreatePageWithMutation);
+// const CreatePageWithMutation = graphql(CREATE_STORY_MUTATION, {
+//   name: "createStoryMutation"
+// })(HomePage);
+export default HomePage; //withRouter(CreatePageWithMutation);
