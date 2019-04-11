@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
-// import FilterIcon from './map/filter';
-// import ListMapSwitch from './map/listmapswitchbtn';
 
 
 const Wrapper = styled.div`
@@ -51,12 +49,10 @@ class GoogleMap extends Component {
             yesIWantToUseGoogleMapApiInternals
             options={mapOptions}
             >
+            {
+              <pin lat="37.548616" lng="-122.059097" />
+            }
           </GoogleMapReact>
-          {
-            //Will likely not be using this method in mobile view
-            //<FilterIcon isFullscreen={this.props.isFullscreen}/>
-            //<ListMapSwitch height={this.props.height} handleToggle={this.props.handleToggle} isFullscreen={this.props.isFullscreen}/>
-          }
         </Wrapper>
       
     );
